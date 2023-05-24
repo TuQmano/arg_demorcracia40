@@ -1,0 +1,164 @@
+id,category,round,year,codprov,name_prov,listas,votos,electores,cargos
+arg_presi_gral_1946,presi,gral,1946,NA,ARGENTINA,Perón - Quijano (Laborista-Unión Civica Radical Junta Renovadora Y Aliados),1487866,3405173,304
+arg_presi_gral_1946,presi,gral,1946,NA,ARGENTINA,Tamborini - Mosca 	(Alianza Unión Democrática),1207080,3405173,72
+arg_presi_gral_1946,presi,gral,1946,NA,ARGENTINA,Demócrata Nacional,43499,3405173,0
+arg_presi_gral_1946,presi,gral,1946,NA,ARGENTINA,Unión Cívica Radical Bloquista,13469,3405173,0
+arg_presi_gral_1946,presi,gral,1946,NA,ARGENTINA,Unión Cívica Radical De Santiago Del Estero,12362,3405173,0
+arg_presi_gral_1946,presi,gral,1946,NA,ARGENTINA,Unión Cívica Radical Lencinista,3918,3405173,0
+arg_presi_gral_1946,presi,gral,1946,NA,ARGENTINA,Otros,47558,3405173,0
+arg_presi_gral_1946,presi,gral,1946,NA,ARGENTINA,Votos Blancos Y Nulos,23735,3405173,0
+arg_presi_gral_1951,presi,gral,1951,NA,ARGENTINA,Perón - Quijano (Peronista),4745168,8633998,NA
+arg_presi_gral_1951,presi,gral,1951,NA,ARGENTINA,Balbín - Frondizi (Unión Cívica Radical),2415750,8633998,NA
+arg_presi_gral_1951,presi,gral,1951,NA,ARGENTINA,Pastor - Solano Lima (Demócrata ),174399,8633998,NA
+arg_presi_gral_1951,presi,gral,1951,NA,ARGENTINA,Ghioldi - De La Peña (Comunista),71318,8633998,NA
+arg_presi_gral_1951,presi,gral,1951,NA,ARGENTINA,Palacios - Ghioldi (Socialista),54920,8633998,NA
+arg_presi_gral_1951,presi,gral,1951,NA,ARGENTINA,Giacobini - Rivero (Salud Publica),5512,8633998,NA
+arg_presi_gral_1951,presi,gral,1951,NA,ARGENTINA,Molinas - Díaz Arana (Demócrata Progresista),2625,8633998,NA
+arg_presi_gral_1951,presi,gral,1951,NA,ARGENTINA,Panelon - Semiza (Concertacion Obrera),1223,8633998,NA
+arg_presi_gral_1951,presi,gral,1951,NA,ARGENTINA,Unión Cívica Nacionalista,163,8633998,NA
+arg_presi_gral_1951,presi,gral,1951,NA,ARGENTINA,Otros,12871,8633998,NA
+arg_presi_gral_1951,presi,gral,1951,NA,ARGENTINA,Votos Blancos Y Nulos,109989,8633998,NA
+arg_presi_gral_1958,presi,gral,1958,NA,ARGENTINA,Frondizi - Gómez (Union Civica Radical Intransigente),4070398,10002327,319
+arg_presi_gral_1958,presi,gral,1958,NA,ARGENTINA,Balbín - Del Castillo (Unión Cívica Radical Del Pueblo),2617693,10002327,140
+arg_presi_gral_1958,presi,gral,1958,NA,ARGENTINA,Palacios - Sánchez Viamonte (Socialista),523545,10002327,0
+arg_presi_gral_1958,presi,gral,1958,NA,ARGENTINA,Otros,432038,10002327,7
+arg_presi_gral_1958,presi,gral,1958,NA,ARGENTINA,Ayarragaray - Sueldo (Demócrata Cristiano ),339495,10002327,0
+arg_presi_gral_1958,presi,gral,1958,NA,ARGENTINA,Molinas - Thedy (Demócrata Progresista),172842,10002327,0
+arg_presi_gral_1958,presi,gral,1958,NA,ARGENTINA,González Iramain - Aguinaga (Demócrata),157320,10002327,0
+arg_presi_gral_1958,presi,gral,1958,NA,ARGENTINA,Solano Lima - Maldonado (Demócrata Conservador Popular),130151,10002327,0
+arg_presi_gral_1958,presi,gral,1958,NA,ARGENTINA,Peña – Zaeffer De Goyeneche 	(Cívico Independiente),54356,10002327,0
+arg_presi_gral_1958,presi,gral,1958,NA,ARGENTINA,Serrano - De Sanz (Unión Federal),15844,10002327,0
+arg_presi_gral_1958,presi,gral,1958,NA,ARGENTINA,Votos En Blanco Y Nulos,783684,10002327,0
+arg_presi_gral_1963,presi,gral,1963,NA,ARGENTINA,Illia-Perette (Unión Cívica Radical Del Pueblo),2441064,11356240,168
+arg_presi_gral_1963,presi,gral,1963,NA,ARGENTINA,Alende-Gelsi (Unión Cívica Radical Intransigente),1593002,11356240,113
+arg_presi_gral_1963,presi,gral,1963,NA,ARGENTINA,Aramburu-Etchevehere (Unión Del Pueblo Argentino),728662,11356240,41
+arg_presi_gral_1963,presi,gral,1963,NA,ARGENTINA,Aramburu-Thedy (Demócrata Progresista),633934,11356240,33
+arg_presi_gral_1963,presi,gral,1963,NA,ARGENTINA,Olmos-Jofre (Federacion Partidos De Centro),499822,11356240,24
+arg_presi_gral_1963,presi,gral,1963,NA,ARGENTINA,Sueldo-Cerro (Demócrata Cristiano),434823,11356240,22
+arg_presi_gral_1963,presi,gral,1963,NA,ARGENTINA,Palacios-Soria (Socialista Argentino),268339,11356240,12
+arg_presi_gral_1963,presi,gral,1963,NA,ARGENTINA,Orgaz-Fitte (Socialista Democrático),258787,11356240,10
+arg_presi_gral_1963,presi,gral,1963,NA,ARGENTINA,Otros,774252,11356240,53
+arg_presi_gral_1963,presi,gral,1963,NA,ARGENTINA,Votos En Blanco,1884435,11356240,0
+arg_presi_gral_1963,presi,gral,1963,NA,ARGENTINA,Votos Nulos,173696,11356240,0
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Alfonsin - Martinez (Union Civica Radical),7724559,17929951,317
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Luder - Bittel (Justicialista),5995402,17929951,259
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Partidos De Distrito,384302,17929951,20
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Alende - Viale (Intransigente),347654,17929951,2
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Frigerio - Salonia (Movimiento De Integracion Y Desarrollo),177426,17929951,2
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Manrique - Rawson (Alianza Federal),57026,17929951,0
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Martinez Raymonda - Balestra (Alianza Democrata Socialista),47736,17929951,0
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Cerro - Ponsati (Democrata Cristiano),46544,17929951,0
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Zamora - Diaz (Movimiento Al Socialismo),42500,17929951,0
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Alsogaray - Oria (Union De Centro Democratico),25263,17929951,0
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Estevez Boero - Rossi (Socialista Popular),21177,17929951,0
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Ramos - Colombo (Frente De Izquierda Popular),14093,17929951,0
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Flores - Guagnini (Obrero),13067,17929951,0
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Confederacion Nacional De Centro,7745,17929951,0
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Conservador Popular,13,17929951,0
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Votos En Blanco,326678,17929951,0
+arg_presi_gral_1983,presi,gral,1983,NA,ARGENTINA,Votos Nulos,95984,17929951,0
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Menem - Duhalde (Frente Justicialista De Unidad Popular),7953301,20034252,312
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Angeloz - Casella (Union Civica Radical),5433369,20034252,213
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Alsogaray - Natale (Alianza De Centro),1150603,20034252,33
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Angeloz - Guzman (Confederacion Federalista Independiente),768128,20034252,21
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Vicente - Zamora (Alianza Izquierda Unida),409751,20034252,1
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Corzo - Houssay (Blanco De Los Jubilados),317934,20034252,7
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Partidos De Distrito,316492,20034252,13
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Estevez Boero - Bravo (Alianza Unidad Socialista),218785,20034252,0
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Altamira - Flores (Obrero),45762,20034252,0
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Ammann - Mendez (Frente Humanista-Verde),42319,20034252,0
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Bustelo - Hernandez (Acuerdo Popular),4783,20034252,0
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Del Trabajo Y Del Pueblo,2770,20034252,0
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Movimiento Democratico Popular Antiimperialista,1339,20034252,0
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Movimiento De Integracion Y Desarrollo,557,20034252,0
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Votos En Blanco,221585,20034252,0
+arg_presi_gral_1989,presi,gral,1989,NA,ARGENTINA,Votos Nulos,115686,20034252,0
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Menem - Ruckauf,8687319,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Bordon - Alvarez,5095929,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Massaccessi - Hernández,2956087,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Rico - Fernández Pezzano,294467,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,López De Zavalía - Benajam (Fuerza Republicana),79609,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Solanas - Imizcoz,71620,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Zamora - Díaz (Movimiento Socialista De Los Trabajadores),45970,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Altamira - Molle,32395,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Mazzitelli - Fonseca (Socialista Auténtico),32174,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Méndez - Ambrosio (Humanista),31202,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Christensen - Montes,27542,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Tumini - Reyna (Corriente Patria Libre),24326,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Santucho - Anognazzi (Movimiento Democrático Antiimperialista),13064,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Paz - González Chavez (Alianza Frente Para La Coincidencia Patriótica),3147,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Votos En Blanco,653434,22178154,NA
+arg_presi_gral_1995,presi,gral,1995,NA,ARGENTINA,Votos Nulos,125105,22178154,NA
+arg_presi_gral_1999,presi,gral,1999,NA,ARGENTINA,De La Rua - Alvarez,9167261,24121277,NA
+arg_presi_gral_1999,presi,gral,1999,NA,ARGENTINA,Duhalde - Ortega,7253909,24121277,NA
+arg_presi_gral_1999,presi,gral,1999,NA,ARGENTINA,Cavallo - Caro Figueroa,1937556,24121277,NA
+arg_presi_gral_1999,presi,gral,1999,NA,ARGENTINA,Walsh - Leonardi (Alianza Izquierda Unida,151276,24121277,NA
+arg_presi_gral_1999,presi,gral,1999,NA,ARGENTINA,Altamira - Rieznik,113916,24121277,NA
+arg_presi_gral_1999,presi,gral,1999,NA,ARGENTINA,Mendez - Pompei (Humanista),131811,24121277,NA
+arg_presi_gral_1999,presi,gral,1999,NA,ARGENTINA,Reyna - Moccia (Alianza Frente De La Resistencia,57133,24121277,NA
+arg_presi_gral_1999,presi,gral,1999,NA,ARGENTINA,Mussa - Herrera (Alianza Social Cristiana),53143,24121277,NA
+arg_presi_gral_1999,presi,gral,1999,NA,ARGENTINA,Montes - Hernández (De Los Trabajadores Socialistas),43911,24121277,NA
+arg_presi_gral_1999,presi,gral,1999,NA,ARGENTINA,Quarracino -Rearte,43147,24121277,NA
+arg_presi_gral_1999,presi,gral,1999,NA,ARGENTINA,Votos En Blanco,708878,24121277,NA
+arg_presi_gral_1999,presi,gral,1999,NA,ARGENTINA,Votos Nulos,186764,24121277,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Menem - Romero (Alianza Frente Por La Lealtad-Ucede),4740907,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Kirchner - Scioli (Alianza Frente Para La Victoria),4312517,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,López Murphy - Gómez Diez (Alianza Movimiento Federal Para Recrear El Crecimiento),3173475,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Rodriguez Saá - Posse (Frente Movimiento Popular-Unión Y Libertad),2735829,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Carrió - Gutiérrez (Alianza Afirmación Para Una Republica Igualitaria),2723574,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Moreau - Losada (Union Civica Radical),453360,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Walsh - Parrilli (Alianza Izquierda Unida),332863,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Bravo - Giustiniani (Socialista),217385,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Altamira - Salas (Obrero),139399,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Venturino - Pinto Kramer (Confederacion Para Que Se Vayan Todos),129764,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Sullings - Ambrosio (Humanista),105702,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Arcagni - Zenof (Alianza Tiempo De Cambios-Unión Popular),63449,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Mazziteli - Camps (Socialista Auténtico),50239,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Zaffore - Perie (Movimiento De Integración Y Desarrollo),47951,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Herrera - Cúneo (Demócrata Cristiano),47750,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Breide Obeid - Vasena (Partido De La Reconstrucción),42460,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Mussa - Suarez (Alianza Unidos O Dominados),39505,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Terán - Bonacci (Movimiento Por La Dignidad Y La Independencia),31766,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Votos En Blanco,196574,25480440,NA
+arg_presi_gral_2003,presi,gral,2003,NA,ARGENTINA,Votos Nulos,345642,25480440,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria),8651066,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Carrió - Giustiniani (Alianza Confederacion Coalicion Civica),4401981,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Lavagna - Morales (Alianza Concertacion Una Nacion Avanzada),3229648,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,"Rodriguez Saá - Maya (Alianza Frente Justicia, Union Y Libertad)",1458955,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Solanas - Cadelli (Socialista Autentico),301265,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,López Murphy - Bullrich (Recrear Para El Crecimiento),273015,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Sobisch - Asís,268255,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Ripoll - Bidonde (Movimiento Socialista De Los Trabajadores),142421,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Pitrola - Arroyos (Obrero),116564,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Montes - Heberling (Alianza Frente P.t.s. - M.a.s. - Izquierda Socialista),84662,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Ammann - Deleonardi (Alianza Frente Amplio Hacia La Unidad Latinoamericana),69760,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Castells - Pelozo (Movimiento Independiente De Jubilados Y Desocupados),48786,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Breide Obeid - Vergara (Popular De La Reconstruccion),45282,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Mussa - Nespral (Confederacion Lealtad Popular),10551,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Votos En Blanco,1330885,27137828,NA
+arg_presi_gral_2007,presi,gral,2007,NA,ARGENTINA,Votos Nulos,240074,27137828,NA
+arg_presi_gral_2011,presi,gral,2011,NA,ARGENTINA,Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria),11865055,28918335,NA
+arg_presi_gral_2011,presi,gral,2011,NA,ARGENTINA,Binner - Morandini (Alianza Frente Amplio Progresista),3684970,28918335,NA
+arg_presi_gral_2011,presi,gral,2011,NA,ARGENTINA,Alfonsin - González Fraga (Alianza Unión Para El Desarrollo Social),2443016,28918335,NA
+arg_presi_gral_2011,presi,gral,2011,NA,ARGENTINA,Rodríguez Saa - Vernet (Alianza Compromiso Federal),1745354,28918335,NA
+arg_presi_gral_2011,presi,gral,2011,NA,ARGENTINA,Duhalde - Das Neves (Alianza Frente Popular),1285830,28918335,NA
+arg_presi_gral_2011,presi,gral,2011,NA,ARGENTINA,Altamira - Castillo (Alianza Frente De Izquierda Y De Los Trabajadores),503372,28918335,NA
+arg_presi_gral_2011,presi,gral,2011,NA,ARGENTINA,Carrió - Pérez (Coalición Cívica - Afirmación Para Una República Igualitaria),399685,28918335,NA
+arg_presi_gral_2011,presi,gral,2011,NA,ARGENTINA,Votos En Blanco,803362,28918335,NA
+arg_presi_gral_2011,presi,gral,2011,NA,ARGENTINA,Votos Nulos,225741,28918335,NA
+arg_presi_gral_2015,presi,gral,2015,NA,ARGENTINA,Macri - Michetti (Alianza Cambiemos),8601131,32130853,NA
+arg_presi_gral_2015,presi,gral,2015,NA,ARGENTINA,Scioli - Zaninni (Alianza Frente Para La Victoria),9338490,32130853,NA
+arg_presi_gral_2015,presi,gral,2015,NA,ARGENTINA,Massa - Saenz (Alianza Unidos Por Una Nueva Alternativa),5386977,32130853,NA
+arg_presi_gral_2015,presi,gral,2015,NA,ARGENTINA,Del Caño - Bregman (Alianza Frente De Izquierda Y De Los Trabajadores),812530,32130853,NA
+arg_presi_gral_2015,presi,gral,2015,NA,ARGENTINA,Stolbizer - Olaviaga (Alianza Progresistas),632551,32130853,NA
+arg_presi_gral_2015,presi,gral,2015,NA,ARGENTINA,Rodriguez Saa - Negre De Alonso (Alianza Compromiso Federal),412578,32130853,NA
+arg_presi_gral_2015,presi,gral,2015,NA,ARGENTINA,Votos En Blanco,664740,32130853,NA
+arg_presi_gral_2015,presi,gral,2015,NA,ARGENTINA,Votos Nulos,199449,32130853,NA
+arg_presi_gral_2019,presi,gral,2019,NA,ARGENTINA,Fernández - Fernández De Kirchner (Frente De Todos),12945990,34229969,NA
+arg_presi_gral_2019,presi,gral,2019,NA,ARGENTINA,Macri - Pichetto (Juntos Por El Cambio),10811345,34229969,NA
+arg_presi_gral_2019,presi,gral,2019,NA,ARGENTINA,Lavagna - Urtubey (Consenso Federal),1649315,34229969,NA
+arg_presi_gral_2019,presi,gral,2019,NA,ARGENTINA,Del Caño - Del Pla (Frente De Izquierda Y De Los Trabajadores - Unidad),579224,34229969,NA
+arg_presi_gral_2019,presi,gral,2019,NA,ARGENTINA,Gómez Centurión - Hotton (Frente Nos),457955,34229969,NA
+arg_presi_gral_2019,presi,gral,2019,NA,ARGENTINA,Espert - Rosales (Unite Por La Libertad Y La Dignidad),394206,34229969,NA
+arg_presi_gral_2019,presi,gral,2019,NA,ARGENTINA,Votos En Blanco,456250,34229969,NA
+arg_presi_gral_2019,presi,gral,2019,NA,ARGENTINA,Votos Nulos,251618,34229969,NA

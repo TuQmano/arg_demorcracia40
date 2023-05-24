@@ -1,5 +1,5 @@
-library(polArverse)
-library(tidyverse)
+library(polArverse) # Argentine Politics Packages Collection, [https://tuqmano.r-universe.dev::NA/NA] v0.0.1.0
+library(tidyverse) # Easily Install and Load the 'Tidyverse', CRAN v1.3.2
 
 
 ### DEFINO ELECCIONES A DESCARGAR ----
@@ -22,4 +22,9 @@ datos <- get_multiple_elections(data = elecciones,
  
 
 ### GENERO BASE DE TRABAJO
+
+
+datos %>% 
+  unnest(cols = "election") %>% 
+  write_csv("entradas/datos.csv")
 
