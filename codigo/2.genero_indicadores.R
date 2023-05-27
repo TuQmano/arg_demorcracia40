@@ -7,29 +7,59 @@ library(electorAr) # Toolbox for Argentina's Electoral Data, [https://tuqmano.r-
 datos <- read_csv("entradas/datos.csv")
 
 
-# PARTICIPACION 
+## PARTICIPACION ----
 
 datos %>% 
   group_by(id, electores) %>% 
   summarise(votos = sum(votos)) %>% 
   mutate(turnour = votos/electores*100)
 
-# NEP
+## NEP ----
 
 datos %>% 
   nest_by(id) %>% 
   summarise(nep = compute_nep(data, index = "Laakso-Taagepera"))
 
 
-# CONCENTRACION
+## CONCENTRACION ----
 
 datos %>% 
   nest_by(id) %>% 
   summarise(nep = compute_concentration(data))
 
-# COMPETITIVIDAD
+## COMPETITIVIDAD ----
 
 datos %>% 
   nest_by(id) %>% 
   summarise(nep = compute_competitiveness(data))
 
+# ELECCIONES PRESIDENCIALES (1946 - 2019) NIVEL PROVINCIAL -----
+
+datos_prov <- read_csv("entradas/datos_prov.csv")
+
+
+## PARTICIPACION ----
+
+datos_prov %>% 
+  group_by(id, electores) %>% 
+  summarise(votos = sum(votos)) %>% 
+  mutate(turnour = votos/electores*100)
+
+## NEP ----
+
+datos_prov %>% 
+  nest_by(id) %>% 
+  summarise(nep = compute_nep(data, index = "Laakso-Taagepera"))
+
+
+## CONCENTRACION ----
+
+datos_prov %>% 
+  nest_by(id) %>% 
+  summarise(nep = compute_concentration(data))
+
+## COMPETITIVIDAD ----
+
+datos_prov %>% 
+  nest_by(id) %>% 
+  summarise(nep = compute_competitiveness(data))
