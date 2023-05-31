@@ -9,7 +9,7 @@ datos <- read_csv("entradas/datos.csv")
 
 ## PARTICIPACION ----
 
-datos %>% 
+participacion <- datos %>% 
   group_by(id, electores) %>% 
   summarise(votos = sum(votos)) %>% 
   mutate(turnour = votos/electores*100)
@@ -40,7 +40,7 @@ datos_prov <- read_csv("entradas/datos_prov.csv")
 
 ## PARTICIPACION ----
 
-datos_prov %>% 
+participacion_prov <- datos_prov %>% 
   group_by(id, electores) %>% 
   summarise(votos = sum(votos)) %>% 
   mutate(turnour = votos/electores*100)
