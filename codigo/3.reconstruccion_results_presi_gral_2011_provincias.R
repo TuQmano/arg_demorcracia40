@@ -1,3 +1,5 @@
+library(tidyverse)
+
 
 ####  RAW DATA ---- (copy/paste con {datapasta} desde portal Andy Tow)
 
@@ -328,13 +330,56 @@ tdf_presi_gral_2011  <- tibble::tribble(
                                                                                             "VOTOS NULOS",   1.35,   184
                           )
 
+### HARDCODE INPUT ELECTORES x PROVINCIA ----
+
+
+
+dfs <- c("caba_presi_gral_2011"       ,"catamarca_presi_gral_2011" , "chaco_presi_gral_2011"    ,  "chubut_presi_gral_2011"  ,   "cordoba_presi_gral_2011" ,  
+         "corrientes_presi_gral_2011" ,"erios_presi_gral_2011"     , "formosa_presi_gral_2011"  ,  "jujuy_presi_gral_2011"   ,   "mendoza_presi_gral_2011" ,  
+         "misiones_presi_gral_2011"  , "neuquen_presi_gral_2011"  ,  "pampa_presi_gral_2011"   ,   "rioja_presi_gral_2011"  ,    "rnegro_presi_gral_2011" ,   
+         "salta_presi_gral_2011"     , "santiago_presi_gral_2011" ,  "scruz_presi_gral_2011"   ,   "sjuan_presi_gral_2011"  ,    "sluis_presi_gral_2011",
+         "tucuman_presi_gral_2011", "tdf_presi_gral_2011" )
+
+
+electores_provincias_2011 <- tibble(dfs) %>% 
+  mutate(electores = case_when(
+    dfs == "caba_presi_gral_2011" ~   2511197    ,
+    dfs == "catamarca_presi_gral_2011" ~ 258405,
+    dfs == "chaco_presi_gral_2011" ~    762198 ,
+    dfs == "chubut_presi_gral_2011" ~    360769,
+    dfs == "cordoba_presi_gral_2011" ~  2505346 ,
+    dfs == "corrientes_presi_gral_2011" ~ 699791,
+    dfs == "erios_presi_gral_2011" ~     922398,
+    dfs == "formosa_presi_gral_2011" ~   360443,
+    dfs == "jujuy_presi_gral_2011" ~     444592,
+    dfs == "mendoza_presi_gral_2011" ~   1234251,
+    dfs == "misiones_presi_gral_2011" ~  723136,
+    dfs == "neuquen_presi_gral_2011" ~   407160,
+    dfs == "pampa_presi_gral_2011" ~     250334,
+    dfs == "rioja_presi_gral_2011" ~    232010 ,
+    dfs == "rnegro_presi_gral_2011" ~    439560,
+    dfs == "salta_presi_gral_2011" ~     819834,
+    dfs == "santiago_presi_gral_2011" ~  601490,
+    dfs == "scruz_presi_gral_2011" ~     199870,
+    dfs == "sjuan_presi_gral_2011" ~     469231,
+    dfs == "sluis_presi_gral_2011" ~ 312226,
+    dfs == "tucuman_presi_gral_2011" ~ 1018979,
+    dfs == "tdf_presi_gral_2011" ~ 100096,
+  )) 
+
+
+
 
 #### WRANGLE DATA ----
 
-# GENERO FUNCION PARA FORMATEAR DATOS NUEVOS SIGUIENDO ESTRUCTURA DE CASOS YA CARGADOS (sfe, arg, pba)
+# GENERO FUNCION PARA FORMATEAR DATOS NUEVOS SIGUIENDO ESTRUCTURA DE CASOS YA CARGADOS (sfe, arg, pba) AGREGANDO ELECTORES
 
 
-wrangle_eleccion <- function(eleccion = NULL, electores = NULL){
+wrangle_eleccion <- function(eleccion){
+  
+  
+  deparse(substitute(eleccion)) -> filename
+  
   
   eleccion %>% 
     dplyr::select(listas = lista, votos) %>% 
@@ -344,17 +389,27 @@ wrangle_eleccion <- function(eleccion = NULL, electores = NULL){
       TRUE ~ listas
     )) %>% 
   dplyr::filter(stringr::str_detect(listas, "POSITIVOS", negate = TRUE)) %>% 
-  dplyr::mutate(electores = as.integer(electores), 
-                votos = as.integer(stringr::str_replace_all(string = votos,
+  dplyr::mutate(votos = as.integer(stringr::str_replace_all(string = votos,
                                                  pattern = "[^[:alnum:] ]", 
-                                                 replacement = "")))
+                                                 replacement = ""))) %>% 
+  dplyr::mutate(electores = electores_provincias_2011$electores[filename == electores_provincias_2011$dfs]) %>% 
+    readr::write_csv(glue::glue("salidas/{filename}.csv"))
 
   
   
   
 }
 
-# CARGA ELECCION A FORMATEAR y HARDCODE param PARA TOTAL ELECTORES DE DISTRITO-ELECCION
-# FALTA ESCRITURA DE .csv
 
- wrangle_eleccion(eleccion = cordoba_presi_gral_2011, electores = 2511197	)
+
+
+
+    
+    
+    
+    
+    
+
+
+# TESTEO 
+ wrangle_eleccion( tucuman_presi_gral_2011)
