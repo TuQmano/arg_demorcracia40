@@ -375,7 +375,7 @@ electores_provincias_2011 <- tibble(dfs) %>%
 # GENERO FUNCION PARA FORMATEAR DATOS NUEVOS SIGUIENDO ESTRUCTURA DE CASOS YA CARGADOS (sfe, arg, pba) AGREGANDO ELECTORES
 
 
-wrangle_eleccion <- function(eleccion){
+wrangle_eleccion <- function(eleccion = NULL){
   
   
   deparse(substitute(eleccion)) -> filename
@@ -393,7 +393,7 @@ wrangle_eleccion <- function(eleccion){
                                                  pattern = "[^[:alnum:] ]", 
                                                  replacement = ""))) %>% 
   dplyr::mutate(electores = electores_provincias_2011$electores[filename == electores_provincias_2011$dfs]) %>% 
-    readr::write_csv(glue::glue("salidas/{filename}.csv"))
+  readr::write_csv(glue::glue("salidas/{filename}.csv"))
 
   
   
@@ -401,15 +401,7 @@ wrangle_eleccion <- function(eleccion){
 }
 
 
-
-
-
     
-    
-    
-    
-    
-
-
+  
 # TESTEO 
- wrangle_eleccion( tucuman_presi_gral_2011)
+ wrangle_eleccion(tucuman_presi_gral_2011)
