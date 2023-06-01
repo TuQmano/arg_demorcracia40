@@ -354,5 +354,7 @@ wrangle_eleccion <- function(eleccion = NULL, electores = NULL){
   
 }
 
+# CARGA ELECCION A FORMATEAR y HARDCODE param PARA TOTAL ELECTORES DE DISTRITO-ELECCION
+# FALTA ESCRITURA DE .csv
 
- wrangle_eleccion(eleccion = caba_presi_gral_2011, electores = 2511197	)
+ wrangle_eleccion(eleccion = cordoba_presi_gral_2011, electores = 2511197	)
