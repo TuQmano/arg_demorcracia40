@@ -1,5 +1,5 @@
 
-
+####  RAW DATA ---- (copy/paste con {datapasta} desde portal Andy Tow)
 
 cordoba_presi_gral_2011 <- tibble::tribble(
               ~`lista`,  ~`votos`, ~`pct`,
@@ -329,3 +329,30 @@ tdf_presi_gral_2011  <- tibble::tribble(
                           )
 
 
+#### WRANGLE DATA ----
+
+# GENERO FUNCION PARA FORMATEAR DATOS NUEVOS SIGUIENDO ESTRUCTURA DE CASOS YA CARGADOS (sfe, arg, pba)
+
+
+wrangle_eleccion <- function(eleccion = NULL, electores = NULL){
+  
+  eleccion %>% 
+    dplyr::select(listas = lista, votos) %>% 
+    dplyr::mutate(listas = dplyr::case_when(
+      stringr::str_detect(listas, "BLANCO") ~ "Votos En Blanco",
+      stringr::str_detect(listas, "NULO") ~ "Votos Nulos",
+      TRUE ~ listas
+    )) %>% 
+  dplyr::filter(stringr::str_detect(listas, "POSITIVOS", negate = TRUE)) %>% 
+  dplyr::mutate(electores = as.integer(electores), 
+                votos = as.integer(stringr::str_replace_all(string = votos,
+                                                 pattern = "[^[:alnum:] ]", 
+                                                 replacement = "")))
+
+  
+  
+  
+}
+
+
+ wrangle_eleccion(eleccion = caba_presi_gral_2011, electores = 2511197	)
