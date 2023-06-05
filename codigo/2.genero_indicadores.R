@@ -1,7 +1,5 @@
 library(tidyverse) # Easily Install and Load the 'Tidyverse', CRAN v1.3.2
-library(electorAr) # Toolbox for Argentina's Electoral Data, [https://tuqmano.r-universe.dev::NA/NA] v0.0.1.0
-
-
+library(electorAr)
 # ELECCIONES PRESIDENCIALES (1946 - 2019) NIVEL NACIONAL -----
 
 datos <- read_csv("entradas/datos.csv")
@@ -16,20 +14,20 @@ participacion <- datos %>%
 
 ## NEP ----
 
-datos %>% 
+nep <- datos %>% 
   nest_by(id) %>% 
   summarise(nep = compute_nep(data, index = "Laakso-Taagepera"))
 
 
 ## CONCENTRACION ----
 
-datos %>% 
+concentracion <- datos %>% 
   nest_by(id) %>% 
   summarise(nep = compute_concentration(data))
 
 ## COMPETITIVIDAD ----
 
-datos %>% 
+competitividad <- datos %>% 
   nest_by(id) %>% 
   summarise(nep = compute_competitiveness(data))
 
@@ -47,19 +45,19 @@ participacion_prov <- datos_prov %>%
 
 ## NEP ----
 
-datos_prov %>% 
+nep_prov <- datos_prov %>% 
   nest_by(id) %>% 
   summarise(nep = compute_nep(data, index = "Laakso-Taagepera"))
 
 
 ## CONCENTRACION ----
 
-datos_prov %>% 
+concentracion_prov <- datos_prov %>% 
   nest_by(id) %>% 
   summarise(nep = compute_concentration(data))
 
 ## COMPETITIVIDAD ----
 
-datos_prov %>% 
+competitividad_prov <- datos_prov %>% 
   nest_by(id) %>% 
   summarise(nep = compute_competitiveness(data))
