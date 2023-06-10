@@ -39,9 +39,9 @@ datos_prov <- read_csv("entradas/datos_prov.csv")
 ## PARTICIPACION ----
 
 participacion_prov <- datos_prov %>% 
-  group_by(id, electores) %>% 
+  group_by(id, electores, codprov) %>% 
   summarise(votos = sum(votos)) %>% 
-  mutate(turnour = votos/electores*100)
+  mutate(turnout = votos/electores*100)
 
 ## NEP ----
 
