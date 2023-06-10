@@ -25,13 +25,13 @@ competitividad <- competitividad$nep %>%
 participacion <- participacion %>% 
   separate(col = id, into = c("district", "category", 
                               "round", "year")) %>% 
-  mutate(value = turnour, 
+  mutate(value = turnout, 
          year = as.integer(year))
 
 participacion_prov <- participacion_prov %>% 
   separate(col = id, into = c("district", "category", 
                               "round", "year")) %>% 
-  mutate(value = turnour, 
+  mutate(value = turnout, 
          year = as.integer(year))
 
 
@@ -165,7 +165,7 @@ plot_concentracion <- ggplot(concentracion, aes(x = year, y =  value)) +
 
 
 ### GT -----
-
+  ##### NACIONAL -----
 concentracion <- concentracion %>% 
   transmute(year, value = concentration, i = "concentracion")
 
@@ -206,6 +206,63 @@ bind_rows(competitividad, concentracion, nep, participacion) %>%
   tab_header(
     title = md(("**El presidencialismo Argentino (1983 - 2019)**")) #  y acumulado anual (sacado en enero)
     ) %>%
+  tab_source_note(
+    source_note = md(
+      "**{electorAr}**: Datos y herramientas electorales de Argentina usando R https://politicaargentina.github.io/electorAr/")
+  )  %>%
+  tab_style(
+    style = 
+      cell_text(weight  = "bold"),
+    locations =  cells_body(columns = c(1)))
+
+
+
+
+##### PROVINCIAL -----
+concentracion_p <- concentracion_prov %>% 
+  transmute(year, codprov, value = concentration, i = "concentracion")
+
+
+competitividad_p <- competitividad_prov %>% 
+  transmute(year, codprov, value = competitividad  , i = "competitividad")
+
+
+
+nep_p <- nep_prov %>% 
+  transmute(year, codprov, value, i = "nep")
+
+
+participacion_p <- participacion_prov %>% 
+  transmute(year, codprov, value = value /100, i = "participacion")
+
+
+bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>% 
+  pivot_wider(id_cols = c(year, codprov), names_from = i, values_from = value) %>%
+  filter(year >= 1983) %>% 
+  gt() 
+
+
+  fmt_number(columns = c(4), decimals = 1, 
+             sep_mark = ".", dec_mark = ",") %>% 
+  fmt_percent(columns = c(2,3,5), decimals = 1, 
+              dec_mark = ",", sep_mark = ".") %>% 
+  cols_align(
+    align = "center",
+    columns = vars(competitividad, concentracion, nep, participacion)) %>% 
+  cols_label(year = md("**Año**"),
+             competitividad = md("Competitividad"),
+             concentracion = md("Concentración"),                  
+             nep = md("NEP") ,             
+             participacion= md("Participación")) %>%
+  opt_table_font(
+    font = list(
+      google_font(name = "Encode Sans")
+    )
+  ) %>% 
+  tab_spanner(label = md("**Indicadores**"), columns = c(2,3,4,5)) %>% 
+  tab_header(
+    title = md(("**El presidencialismo Argentino (1983 - 2019)**")) #  y acumulado anual (sacado en enero)
+  ) %>%
   tab_source_note(
     source_note = md(
       "**{electorAr}**: Datos y herramientas electorales de Argentina usando R https://politicaargentina.github.io/electorAr/")
