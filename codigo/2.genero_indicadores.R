@@ -10,7 +10,7 @@ datos <- read_csv("entradas/datos.csv")
 participacion <- datos %>% 
   group_by(id, electores) %>% 
   summarise(votos = sum(votos)) %>% 
-  mutate(turnour = votos/electores*100)
+  mutate(turnout = votos/electores*100)
 
 ## NEP ----
 
