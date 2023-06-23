@@ -6,6 +6,7 @@ library(geoAr)
 library(geofacet) # 'ggplot2' Faceting Utilities for Geographical Data, CRAN v0.2.0
 library(patchwork)
 library(gt)
+library(gtExtras)
 
 
 # GENERO INDICADORES
@@ -236,30 +237,116 @@ participacion_p <- participacion_prov %>%
   transmute(year, codprov, value = value /100, i = "participacion")
 
 
+### GT TABLE / Indicadores x Provincia ----
+
+
+
+vars_indicadores= c('competitividad',
+               'concentracion',
+               'nep',
+               'participacion')
+
+
+#### NOMRBES DE PORVINCIAS PARA VIZ
+prov_names <- geo_metadata %>% 
+  select(codprov, name_prov) %>% 
+  distinct()
+
+#### GANADOR PAIS / PROVINCIAS para win-loss plot GT
+
+
+pais_ganador <- datos %>% 
+  group_by(year) %>% 
+  slice_max(votos) %>% 
+  select(listas, name_prov, year) %>% 
+  transmute(ganadorPais = paste(year, listas))
+
+
+datos_prov %>% 
+  group_by(name_prov, year) %>% 
+  slice_max(votos) %>% 
+  transmute(ganador = paste(year, listas)) %>% 
+  left_join(pais_ganador) %>% 
+  print(n = Inf)
+
+datos_prov %>% 
+  group_by(name_prov, year) %>% 
+  slice_max(votos) %>% 
+  ungroup() %>% 
+  transmute(ganador = paste(year, listas)) %>% 
+  distinct() %>% 
+  print(n = Inf)
+
+
+
+
+
+
 bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>% 
   pivot_wider(id_cols = c(year, codprov), names_from = i, values_from = value) %>%
-  filter(year >= 1983) %>% 
-  gt() 
+  filter(year >= 1983)  %>%
+  left_join(prov_names, by = "codprov") %>% 
+  group_by(name_prov) %>% 
+  summarise(
+    
+    mean_competitividad = mean(competitividad), 
+    mean_concentracion = mean(concentracion), 
+    mean_nep = mean(nep), 
+    mean_participacion = mean(participacion),
+    
+    sd_competitividad = sd(competitividad), 
+    sd_concentracion = sd(concentracion), 
+    sd_nep = sd(nep), 
+    sd_participacion = sd(participacion),
+    
+    # Lista de cada variable de indicadores
+    across(all_of(vars_indicadores), ~ list(.x))) %>% 
+  select(name_prov, contains("participacion"), contains("concentracion"), 
+         contains("competitividad"), contains("nep")) %>% 
+  gt() %>% 
+  
+  gt_plt_sparkline(type = "shaded",
+                  column = competitividad, fig_dim = c(8, 20)
+  ) %>% 
+  
+  gt_plt_sparkline(type = "shaded",
+                   column = nep, fig_dim = c(8, 20)
+  ) %>%
+  
+  gt_plt_sparkline(type = "shaded",
+                   column = concentracion, fig_dim = c(8, 20)
+  ) %>% 
+  
+  gt_plt_sparkline(type = "shaded",
+                   column = participacion, fig_dim = c(8, 20)
+  ) %>% 
 
-
-  fmt_number(columns = c(4), decimals = 1, 
-             sep_mark = ".", dec_mark = ",") %>% 
-  fmt_percent(columns = c(2,3,5), decimals = 1, 
-              dec_mark = ",", sep_mark = ".") %>% 
   cols_align(
     align = "center",
-    columns = vars(competitividad, concentracion, nep, participacion)) %>% 
-  cols_label(year = md("**Año**"),
-             competitividad = md("Competitividad"),
-             concentracion = md("Concentración"),                  
-             nep = md("NEP") ,             
-             participacion= md("Participación")) %>%
+    columns = c(competitividad, concentracion, nep, participacion)) %>% 
+  cols_label(name_prov = md(""),
+             competitividad = md(""),
+             concentracion = md(""),                  
+             nep = md("") ,             
+             participacion= md(""),
+             mean_competitividad = md("Promedio"),
+             mean_concentracion = md("Promedio"),                  
+             mean_nep = md("Promedio") ,             
+             mean_participacion= md("Promedio"),
+             sd_competitividad = md("SD"),
+             sd_concentracion = md("SD"),                  
+             sd_nep = md("SD") ,             
+             sd_participacion= md("SD"),
+             ) %>%
   opt_table_font(
     font = list(
       google_font(name = "Encode Sans")
     )
   ) %>% 
-  tab_spanner(label = md("**Indicadores**"), columns = c(2,3,4,5)) %>% 
+  tab_spanner(label = md("**Participación**"), columns = c(2,3,4)) %>%  
+  tab_spanner(label = md("**Concentración**"), columns = c(5,6,7)) %>% 
+  tab_spanner(label = md("**Competitividad**"), columns = c(8,9,10)) %>% 
+  tab_spanner(label = md("**NEP**"), columns = c(11,12,13)) %>% 
   tab_header(
     title = md(("**El presidencialismo Argentino (1983 - 2019)**")) #  y acumulado anual (sacado en enero)
   ) %>%
@@ -270,4 +357,6 @@ bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>%
   tab_style(
     style = 
       cell_text(weight  = "bold"),
-    locations =  cells_body(columns = c(1)))
+    locations =  cells_body(columns = c(1))) %>% 
+  fmt_number(columns = c(2,3,5,6,8,9,11,12), decimals = 2) %>% 
+  gtsave("plots/indicadores_provincias.png")
