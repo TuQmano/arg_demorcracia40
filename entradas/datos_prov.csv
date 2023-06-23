@@ -482,12 +482,12 @@ chubut_presi_gral_2007,presi,gral,2007,07,CHUBUT,Castells - Pelozo (Movimiento I
 chubut_presi_gral_2007,presi,gral,2007,07,CHUBUT,Mussa - Nespral (Confederacion Lealtad Popular),17,321719,NA
 chubut_presi_gral_2007,presi,gral,2007,07,CHUBUT,Votos Blancos,6748,321719,NA
 chubut_presi_gral_2007,presi,gral,2007,07,CHUBUT,Votos Nulos,4269,321719,NA
-chubut_presi_gral_2011,presi,gral,2011,07,CHUBUT,Fernández de Kirchner - Boudou (ALIANZA FRENTE PARA LA VICTORIA),16508,360769,NA
+chubut_presi_gral_2011,presi,gral,2011,07,CHUBUT,Fernández de Kirchner - Boudou (ALIANZA FRENTE PARA LA VICTORIA),165080,360769,NA
 chubut_presi_gral_2011,presi,gral,2011,07,CHUBUT,Duhalde - Das Neves (ALIANZA FRENTE POPULAR),45335,360769,NA
 chubut_presi_gral_2011,presi,gral,2011,07,CHUBUT,Alfonsin - González Fraga (ALIANZA UNIÓN PARA EL DESARROLLO SOCIAL),26603,360769,NA
 chubut_presi_gral_2011,presi,gral,2011,07,CHUBUT,Binner - Morandini (ALIANZA FRENTE AMPLIO PROGRESISTA),21231,360769,NA
 chubut_presi_gral_2011,presi,gral,2011,07,CHUBUT,Rodríguez Saa - Vernet (ALIANZA COMPROMISO FEDERAL),8378,360769,NA
-chubut_presi_gral_2011,presi,gral,2011,07,CHUBUT,Altamira - Castillo (ALIANZA FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES),517,360769,NA
+chubut_presi_gral_2011,presi,gral,2011,07,CHUBUT,Altamira - Castillo (ALIANZA FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES),5170,360769,NA
 chubut_presi_gral_2011,presi,gral,2011,07,CHUBUT,Carrió - Pérez (COALICIÓN CÍVICA - AFIRMACIÓN PARA UNA REPÚBLICA IGUALITARIA),4186,360769,NA
 chubut_presi_gral_2011,presi,gral,2011,07,CHUBUT,Votos En Blanco,389,360769,NA
 chubut_presi_gral_2011,presi,gral,2011,07,CHUBUT,Votos Nulos,4822,360769,NA
@@ -893,7 +893,7 @@ erios_presi_gral_2007,presi,gral,2007,08,ENTRE RIOS,Votos Nulos,10669,872040,NA
 erios_presi_gral_2011,presi,gral,2011,08,ENTRE RIOS,Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA),367427,922398,NA
 erios_presi_gral_2011,presi,gral,2011,08,ENTRE RIOS,Binner - Morandini (ALIANZA FRENTE AMPLIO PROGRESISTA),137351,922398,NA
 erios_presi_gral_2011,presi,gral,2011,08,ENTRE RIOS,Alfonsin - González Fraga (ALIANZA UNIÓN PARA EL DESARROLLO SOCIAL),97285,922398,NA
-erios_presi_gral_2011,presi,gral,2011,08,ENTRE RIOS,Duhalde - Das Neves (ALIANZA FRENTE POPULAR),2936,922398,NA
+erios_presi_gral_2011,presi,gral,2011,08,ENTRE RIOS,Duhalde - Das Neves (ALIANZA FRENTE POPULAR),29360,922398,NA
 erios_presi_gral_2011,presi,gral,2011,08,ENTRE RIOS,Rodríguez Saa - Vernet (ALIANZA COMPROMISO FEDERAL),27394,922398,NA
 erios_presi_gral_2011,presi,gral,2011,08,ENTRE RIOS,Altamira - Castillo (ALIANZA FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES),6966,922398,NA
 erios_presi_gral_2011,presi,gral,2011,08,ENTRE RIOS,Carrió - Pérez (COALICIÓN CÍVICA - AFIRMACIÓN PARA UNA REPÚBLICA IGUALITARIA),6786,922398,NA
@@ -1278,7 +1278,7 @@ mendoza_presi_gral_2007,presi,gral,2007,13,MENDOZA,Ammann - Deleonardi (Alianza 
 mendoza_presi_gral_2007,presi,gral,2007,13,MENDOZA,Breide Obeid - Vergara (Popular De La Reconstruccion),1270,1141162,NA
 mendoza_presi_gral_2007,presi,gral,2007,13,MENDOZA,Votos Blancos,70312,1141162,NA
 mendoza_presi_gral_2007,presi,gral,2007,13,MENDOZA,Votos Nulos,17763,1141162,NA
-mendoza_presi_gral_2011,presi,gral,2011,13,MENDOZA,Fernández de Kirchner - Boudou (ALIANZA FRENTE PARA LA VICTORIA),44968,1234251,NA
+mendoza_presi_gral_2011,presi,gral,2011,13,MENDOZA,Fernández de Kirchner - Boudou (ALIANZA FRENTE PARA LA VICTORIA),449680,1234251,NA
 mendoza_presi_gral_2011,presi,gral,2011,13,MENDOZA,Rodríguez Saa - Vernet (ALIANZA COMPROMISO FEDERAL),179067,1234251,NA
 mendoza_presi_gral_2011,presi,gral,2011,13,MENDOZA,Binner - Morandini (ALIANZA FRENTE AMPLIO PROGRESISTA),10771,1234251,NA
 mendoza_presi_gral_2011,presi,gral,2011,13,MENDOZA,Alfonsin - González Fraga (ALIANZA UNIÓN PARA EL DESARROLLO SOCIAL),96936,1234251,NA
@@ -2392,7 +2392,7 @@ santiago_presi_gral_2011,presi,gral,2011,22,SANTIAGO DEL ESTERO,Fernández.de.Ki
 santiago_presi_gral_2011,presi,gral,2011,22,SANTIAGO DEL ESTERO,Alfonsin - González Fraga (ALIANZA UNIÓN PARA EL DESARROLLO SOCIAL),29197,601490,NA
 santiago_presi_gral_2011,presi,gral,2011,22,SANTIAGO DEL ESTERO,Binner - Morandini (ALIANZA FRENTE AMPLIO PROGRESISTA),16942,601490,NA
 santiago_presi_gral_2011,presi,gral,2011,22,SANTIAGO DEL ESTERO,Duhalde - Das Neves (ALIANZA FRENTE POPULAR),13665,601490,NA
-santiago_presi_gral_2011,presi,gral,2011,22,SANTIAGO DEL ESTERO,Rodríguez Saa - Vernet (ALIANZA COMPROMISO FEDERAL),683,601490,NA
+santiago_presi_gral_2011,presi,gral,2011,22,SANTIAGO DEL ESTERO,Rodríguez Saa - Vernet (ALIANZA COMPROMISO FEDERAL),6830,601490,NA
 santiago_presi_gral_2011,presi,gral,2011,22,SANTIAGO DEL ESTERO,Altamira - Castillo (ALIANZA FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES),4396,601490,NA
 santiago_presi_gral_2011,presi,gral,2011,22,SANTIAGO DEL ESTERO,Carrió - Pérez (COALICIÓN CÍVICA - AFIRMACIÓN PARA UNA REPÚBLICA IGUALITARIA),2705,601490,NA
 santiago_presi_gral_2011,presi,gral,2011,22,SANTIAGO DEL ESTERO,Votos En Blanco,5234,601490,NA
@@ -2490,7 +2490,7 @@ scruz_presi_gral_2007,presi,gral,2007,20,SANTA CRUZ,Solanas - Cadelli (Socialist
 scruz_presi_gral_2007,presi,gral,2007,20,SANTA CRUZ,López Murphy - Bullrich (Recrear Para El Crecimiento),0,162769,NA
 scruz_presi_gral_2007,presi,gral,2007,20,SANTA CRUZ,Votos Blancos,6308,162769,NA
 scruz_presi_gral_2007,presi,gral,2007,20,SANTA CRUZ,Votos Nulos,1408,162769,NA
-scruz_presi_gral_2011,presi,gral,2011,20,SANTA CRUZ,Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA),10754,199870,NA
+scruz_presi_gral_2011,presi,gral,2011,20,SANTA CRUZ,Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA),107540,199870,NA
 scruz_presi_gral_2011,presi,gral,2011,20,SANTA CRUZ,Alfonsin - González Fraga (ALIANZA UNIÓN PARA EL DESARROLLO SOCIAL),17028,199870,NA
 scruz_presi_gral_2011,presi,gral,2011,20,SANTA CRUZ,Binner - Morandini (ALIANZA FRENTE AMPLIO PROGRESISTA),10543,199870,NA
 scruz_presi_gral_2011,presi,gral,2011,20,SANTA CRUZ,Altamira - Castillo (ALIANZA FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES),2457,199870,NA
@@ -2724,7 +2724,7 @@ sjuan_presi_gral_2011,presi,gral,2011,18,SAN JUAN,Fernández.de.Kirchner.-.Boudo
 sjuan_presi_gral_2011,presi,gral,2011,18,SAN JUAN,Rodríguez Saa - Vernet (ALIANZA COMPROMISO FEDERAL),57968,469231,NA
 sjuan_presi_gral_2011,presi,gral,2011,18,SAN JUAN,Alfonsin - González Fraga (ALIANZA UNIÓN PARA EL DESARROLLO SOCIAL),24225,469231,NA
 sjuan_presi_gral_2011,presi,gral,2011,18,SAN JUAN,Binner - Morandini (ALIANZA FRENTE AMPLIO PROGRESISTA),2114,469231,NA
-sjuan_presi_gral_2011,presi,gral,2011,18,SAN JUAN,Duhalde - Das Neves (ALIANZA FRENTE POPULAR),75,469231,NA
+sjuan_presi_gral_2011,presi,gral,2011,18,SAN JUAN,Duhalde - Das Neves (ALIANZA FRENTE POPULAR),7500,469231,NA
 sjuan_presi_gral_2011,presi,gral,2011,18,SAN JUAN,Altamira - Castillo (ALIANZA FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES),3624,469231,NA
 sjuan_presi_gral_2011,presi,gral,2011,18,SAN JUAN,Carrió - Pérez (COALICIÓN CÍVICA - AFIRMACIÓN PARA UNA REPÚBLICA IGUALITARIA),3028,469231,NA
 sjuan_presi_gral_2011,presi,gral,2011,18,SAN JUAN,Votos En Blanco,27054,469231,NA
@@ -2829,8 +2829,8 @@ tdf_presi_gral_2011,presi,gral,2011,24,TIERRA DEL FUEGO,Fernández de Kirchner -
 tdf_presi_gral_2011,presi,gral,2011,24,TIERRA DEL FUEGO,Binner - Morandini (ALIANZA FRENTE AMPLIO PROGRESISTA),7267,100096,NA
 tdf_presi_gral_2011,presi,gral,2011,24,TIERRA DEL FUEGO,Alfonsin - González Fraga (ALIANZA UNIÓN PARA EL DESARROLLO SOCIAL),6117,100096,NA
 tdf_presi_gral_2011,presi,gral,2011,24,TIERRA DEL FUEGO,Rodríguez Saa - Vernet (ALIANZA COMPROMISO FEDERAL),4032,100096,NA
-tdf_presi_gral_2011,presi,gral,2011,24,TIERRA DEL FUEGO,Duhalde - Das Neves (ALIANZA FRENTE POPULAR),251,100096,NA
-tdf_presi_gral_2011,presi,gral,2011,24,TIERRA DEL FUEGO,Altamira - Castillo (ALIANZA FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES),137,100096,NA
+tdf_presi_gral_2011,presi,gral,2011,24,TIERRA DEL FUEGO,Duhalde - Das Neves (ALIANZA FRENTE POPULAR),2510,100096,NA
+tdf_presi_gral_2011,presi,gral,2011,24,TIERRA DEL FUEGO,Altamira - Castillo (ALIANZA FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES),1370,100096,NA
 tdf_presi_gral_2011,presi,gral,2011,24,TIERRA DEL FUEGO,Carrió - Pérez (COALICIÓN CÍVICA - AFIRMACIÓN PARA UNA REPÚBLICA IGUALITARIA),1063,100096,NA
 tdf_presi_gral_2011,presi,gral,2011,24,TIERRA DEL FUEGO,Votos En Blanco,1182,100096,NA
 tdf_presi_gral_2011,presi,gral,2011,24,TIERRA DEL FUEGO,Votos Nulos,135,100096,NA
