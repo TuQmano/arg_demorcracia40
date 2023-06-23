@@ -61,3 +61,4 @@ concentracion_prov <- datos_prov %>%
 competitividad_prov <- datos_prov %>% 
   nest_by(id) %>% 
   summarise(nep = compute_competitiveness(data))
+

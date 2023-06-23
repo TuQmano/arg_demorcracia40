@@ -90,11 +90,11 @@ plot_participacion <- ggplot(participacion, aes(x = year, y =  value)) +
 
 
 
+#### COMPETITIVIDAD ----
+
 
 competitividad_prov <- competitividad_prov$nep
 
-
-#### COMPETITIVIDAD ----
 
 plot_competitividad <- ggplot(competitividad, aes(x = year, y =  value)) + 
   geom_line(data = competitividad_prov %>% rename(value = competitividad), 
@@ -117,10 +117,12 @@ plot_competitividad <- ggplot(competitividad, aes(x = year, y =  value)) +
         panel.grid.minor.x  = element_blank())
 
 
-concentracion_prov <- concentracion_prov$nep
 
 
 #### CONCENTRACION ----
+
+
+concentracion_prov <- concentracion_prov$nep
 
 plot_concentracion <- ggplot(concentracion, aes(x = year, y =  value)) + 
   geom_line(data = concentracion_prov %>% rename(value = concentration), 
@@ -175,7 +177,6 @@ competitividad <- competitividad %>%
   transmute(year, value, i = "competitividad")
 
 
-
 nep <- nep %>% 
   transmute(year, value, i = "nep")
 
@@ -186,13 +187,13 @@ bind_rows(competitividad, concentracion, nep, participacion) %>%
   pivot_wider(id_cols = year, names_from = i, values_from = value) %>%
   filter(year >= 1983) %>% 
   gt() %>% 
-  fmt_number(columns = c(4), decimals = 1, 
+  fmt_number(columns = c(2, 3,4), decimals = 2, 
              sep_mark = ".", dec_mark = ",") %>% 
-  fmt_percent(columns = c(2,3,5), decimals = 1, 
+  fmt_percent(columns = c(5), decimals = 1, 
               dec_mark = ",", sep_mark = ".") %>% 
   cols_align(
     align = "center",
-    columns = vars(competitividad, concentracion, nep, participacion)) %>% 
+    columns = c(competitividad, concentracion, nep, participacion)) %>% 
   cols_label(year = md("**Año**"),
              competitividad = md("Competitividad"),
              concentracion = md("Concentración"),                  
@@ -214,9 +215,9 @@ bind_rows(competitividad, concentracion, nep, participacion) %>%
   tab_style(
     style = 
       cell_text(weight  = "bold"),
-    locations =  cells_body(columns = c(1)))
-
-
+    locations =  cells_body(columns = c(1))) %>% 
+  gt_theme_538()  %>%  
+  gtsave("plots/indicadores_nacional.png")
 
 
 ##### PROVINCIAL -----
@@ -226,7 +227,6 @@ concentracion_p <- concentracion_prov %>%
 
 competitividad_p <- competitividad_prov %>% 
   transmute(year, codprov, value = competitividad  , i = "competitividad")
-
 
 
 nep_p <- nep_prov %>% 
@@ -279,15 +279,15 @@ datos_prov %>%
 
 
 
+#### TABLA INDICADORES
 
 
-
-bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>% 
-  pivot_wider(id_cols = c(year, codprov), names_from = i, values_from = value) %>%
-  filter(year >= 1983)  %>%
-  left_join(prov_names, by = "codprov") %>% 
+bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>% # SUMA INDICADORES A NIVEL PROVINCIAL EN UN UNICO DATA.FRAME
+  pivot_wider(id_cols = c(year, codprov), names_from = i, values_from = value) %>% #GENERA VARIABLES ESPECIFICAS PARA CADA INDICADOR
+  filter(year >= 1983)  %>% # FILTRA ELECCIONES DESDE EL RETORNO DE LA DEMOCRACIA
+  left_join(prov_names, by = "codprov") %>%  # AGRUPA POR DISTRITO 
   group_by(name_prov) %>% 
-  summarise(
+  summarise( # CALCULA MEDIA y DESVIACION DE CADA INDICADOR
     
     mean_competitividad = mean(competitividad), 
     mean_concentracion = mean(concentracion), 
@@ -299,28 +299,32 @@ bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>%
     sd_nep = sd(nep), 
     sd_participacion = sd(participacion),
     
-    # Lista de cada variable de indicadores
+    # Lista de cada variable de indicadores para sparkline de cada indicador por provincia
     across(all_of(vars_indicadores), ~ list(.x))) %>% 
   select(name_prov, contains("participacion"), contains("concentracion"), 
          contains("competitividad"), contains("nep")) %>% 
   gt() %>% 
   
-  gt_plt_sparkline(type = "shaded",
-                  column = competitividad, fig_dim = c(8, 20)
+   # mini sparklines plots por indicador (`gtExtras`)
+  gt_plt_sparkline(type = "ref_mean",
+                  column = competitividad, fig_dim = c(8, 20), palette = c( "black", "black", "red", "green", "blue")
   ) %>% 
   
-  gt_plt_sparkline(type = "shaded",
-                   column = nep, fig_dim = c(8, 20)
+  gt_plt_sparkline(type = "ref_mean",
+                   column = nep, fig_dim = c(8, 20) , palette = c( "black", "black", "red", "green", "blue")
   ) %>%
   
-  gt_plt_sparkline(type = "shaded",
-                   column = concentracion, fig_dim = c(8, 20)
+  gt_plt_sparkline(type = "ref_mean",
+                   column = concentracion, fig_dim = c(8, 20) , palette = c( "black", "black", "red", "green", "blue")
   ) %>% 
   
-  gt_plt_sparkline(type = "shaded",
-                   column = participacion, fig_dim = c(8, 20)
+  gt_plt_sparkline(type = "ref_mean",
+                   column = participacion, fig_dim = c(8, 20) , palette = c( "black", "black", "red", "green", "blue")
   ) %>% 
-
+ 
+  
+  ###
+  
   cols_align(
     align = "center",
     columns = c(competitividad, concentracion, nep, participacion)) %>% 
@@ -359,4 +363,5 @@ bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>%
       cell_text(weight  = "bold"),
     locations =  cells_body(columns = c(1))) %>% 
   fmt_number(columns = c(2,3,5,6,8,9,11,12), decimals = 2) %>% 
+  gt_theme_538()  %>% 
   gtsave("plots/indicadores_provincias.png")
