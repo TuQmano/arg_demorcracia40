@@ -168,7 +168,7 @@ rioja_presi_gral_2011      <- tibble::tribble(
 
 mendoza_presi_gral_2011 <- tibble::tribble(
   ~`lista`,  ~`votos`, ~`pct`,
-  "Fernández de Kirchner - Boudou (ALIANZA FRENTE PARA LA VICTORIA)",  "449.68",  5112,
+  "Fernández de Kirchner - Boudou (ALIANZA FRENTE PARA LA VICTORIA)",  "449.680",  5112,
                                                        "Rodríguez Saa - Vernet (ALIANZA COMPROMISO FEDERAL)", "179.067",  2036,
                                                     "Binner - Morandini (ALIANZA FRENTE AMPLIO PROGRESISTA)",  "107.71",  1224,
                                        "Alfonsin - González Fraga (ALIANZA UNIÓN PARA EL DESARROLLO SOCIAL)",  "96.936",  1102,
@@ -381,6 +381,10 @@ wrangle_eleccion <- function(eleccion = NULL){
   deparse(substitute(eleccion)) -> filename
   
   
+  
+  
+  
+  
   eleccion %>% 
     dplyr::select(lista, votos) %>% 
     dplyr::mutate(lista = dplyr::case_when(
@@ -388,54 +392,60 @@ wrangle_eleccion <- function(eleccion = NULL){
       stringr::str_detect(lista, "NULO") ~ "Votos Nulos",
       TRUE ~ lista
     )) %>% 
-  dplyr::filter(stringr::str_detect(lista, "POSITIVOS", negate = TRUE)) %>% 
-  dplyr::mutate(votos = as.integer(stringr::str_replace_all(string = votos,
-                                                 pattern = "[^[:alnum:] ]", 
-                                                 replacement = ""))) %>% 
-  dplyr::mutate(electores = electores_provincias_2011$electores[filename == electores_provincias_2011$dfs]) %>% 
-  readr::write_csv(glue::glue("salidas/{filename}.csv"))
-
+    dplyr::filter(stringr::str_detect(lista, "POSITIVOS", negate = TRUE)) %>% 
+    dplyr::mutate(votos = as.integer(stringr::str_replace_all(string = votos,
+                                                              pattern = "[^[:alnum:] ]", 
+                                                              replacement = ""))) %>% 
+    dplyr::mutate(electores = electores_provincias_2011$electores[filename == electores_provincias_2011$dfs]) %>% 
+    readr::write_csv(glue::glue("salidas/{filename}.csv"))
+  
   
   
   
 }
 
 
-    
+
+
+# GUARDO - setear DF para guardar manualmente
+wrangle_eleccion(mendoza_presi_gral_2011)
+
+
+
+
+
+
+
+
+### AGREGO CASO FALTANTE: Misiones Presi Gral 2019
+
+misiones_presi_gral2019 <-  tibble::tribble(
+  ~`lista`, ~`votos`, ~`pct`,
   
-# GUARDO 
- wrangle_eleccion()
- 
- 
- ### AGREGO CASO FALTANTE: Misiones Presi Gral 2019
- 
- misiones_presi_gral2019 <-  tibble::tribble(
-   ~`lista`, ~`votos`, ~`pct`,
-   
-   "Fernández.-.Fernández.(FRENTE.DE.TODOS)", "417.752", "57,71",
-   "Macri - Pichetto (JUNTOS POR EL CAMBIO)",    "245.254",  "33,88",
-   "Lavagna - Urtubey (CONSENSO FEDERAL)",     "24.451",   "3,38",
-   "Gómez Centurión - Hotton (FRENTE NOS)",     "21.239",   "2,93",
-   "Espert - Rosales (UNITE POR LA LIBERTAD Y LA DIGNIDAD)",      "8.537",   "1,18",
-   "Del Caño - Del Pla (FRENTE DE IZQUIERDA Y DE TRABAJADORES)",      "6.704",   "0,93",
-   "VOTOS POSITIVOS",    "723.937",  "97,50",
-   "VOTOS EN BLANCO",     "12.194",   "1,64",
-   "VOTOS NULOS",      "6.357",   "0,86"
- )
- 
- 
- 
- 
- misiones_presi_gral2019 %>% 
-   dplyr::select(lista, votos) %>% 
-   dplyr::mutate(lista = dplyr::case_when(
-     stringr::str_detect(lista, "BLANCO") ~ "Votos En Blanco",
-     stringr::str_detect(lista, "NULO") ~ "Votos Nulos",
-     TRUE ~ lista
-   )) %>% 
-   dplyr::filter(stringr::str_detect(lista, "POSITIVOS", negate = TRUE)) %>% 
-   dplyr::mutate(votos = as.integer(stringr::str_replace_all(string = votos,
-                                                             pattern = "[^[:alnum:] ]", 
-                                                             replacement = ""))) %>% 
-   dplyr::mutate(electores = 929542) %>% 
-   readr::write_csv(glue::glue("salidas/misiones_presi_gral2019.csv"))
+  "Fernández.-.Fernández.(FRENTE.DE.TODOS)", "417.752", "57,71",
+  "Macri - Pichetto (JUNTOS POR EL CAMBIO)",    "245.254",  "33,88",
+  "Lavagna - Urtubey (CONSENSO FEDERAL)",     "24.451",   "3,38",
+  "Gómez Centurión - Hotton (FRENTE NOS)",     "21.239",   "2,93",
+  "Espert - Rosales (UNITE POR LA LIBERTAD Y LA DIGNIDAD)",      "8.537",   "1,18",
+  "Del Caño - Del Pla (FRENTE DE IZQUIERDA Y DE TRABAJADORES)",      "6.704",   "0,93",
+  "VOTOS POSITIVOS",    "723.937",  "97,50",
+  "VOTOS EN BLANCO",     "12.194",   "1,64",
+  "VOTOS NULOS",      "6.357",   "0,86"
+)
+
+
+
+
+misiones_presi_gral2019 %>% 
+  dplyr::select(lista, votos) %>% 
+  dplyr::mutate(lista = dplyr::case_when(
+    stringr::str_detect(lista, "BLANCO") ~ "Votos En Blanco",
+    stringr::str_detect(lista, "NULO") ~ "Votos Nulos",
+    TRUE ~ lista
+  )) %>% 
+  dplyr::filter(stringr::str_detect(lista, "POSITIVOS", negate = TRUE)) %>% 
+  dplyr::mutate(votos = as.integer(stringr::str_replace_all(string = votos,
+                                                            pattern = "[^[:alnum:] ]", 
+                                                            replacement = ""))) %>% 
+  dplyr::mutate(electores = 929542) %>% 
+  readr::write_csv(glue::glue("salidas/misiones_presi_gral2019.csv"))
