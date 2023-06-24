@@ -33,7 +33,8 @@ competitividad <- datos %>%
 
 # ELECCIONES PRESIDENCIALES (1946 - 2019) NIVEL PROVINCIAL -----
 
-datos_prov <- read_csv("entradas/datos_prov.csv")
+datos_prov <- read_csv("entradas/datos_prov.csv") %>% 
+  filter(!is.na(votos))
 
 
 ## PARTICIPACION ----
