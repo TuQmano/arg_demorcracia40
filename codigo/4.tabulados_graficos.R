@@ -147,7 +147,7 @@ plot_concentracion <- ggplot(concentracion, aes(x = year, y =  value)) +
 
 
 
-
+##### ggplot + patchwork ----
 
 (plot_competitividad + plot_concentracion) / 
   (plot_participacion + plot_nep)+
@@ -158,6 +158,9 @@ plot_concentracion <- ggplot(concentracion, aes(x = year, y =  value)) +
                   cada una de las provincias y las azules en el agregado nacional")
 
 
+dev.off()
+
+ggsave(plot = last_plot(), filename = "plots/indicadores_nacional_patchwork.png")
 
 
 
@@ -167,8 +170,12 @@ plot_concentracion <- ggplot(concentracion, aes(x = year, y =  value)) +
 
 
 
-### GT -----
+### GT / TABLAS -----
+
+
   ##### NACIONAL -----
+
+
 concentracion <- concentracion %>% 
   transmute(year, value = concentration, i = "concentracion")
 
@@ -237,7 +244,7 @@ participacion_p <- participacion_prov %>%
   transmute(year, codprov, value = value /100, i = "participacion")
 
 
-### GT TABLE / Indicadores x Provincia ----
+### Indicadores x Provincia 
 
 
 
