@@ -1,5 +1,5 @@
 
-
+### ERVISION DE WORKFLOW SAN LUIS  / SLUI  + ELECCION FALTANTE DE MISIONES
 test <- dplyr::bind_rows(participacion, participacion_prov) %>% 
   tidyr::separate(col = id, into = c("district", "categroy", "round", "year")) %>% 
   nest_by(year)
@@ -29,3 +29,25 @@ provincias2019 <- elecciones_filtrado %>%
   pull(distrito)
 
   anti_join(as.tibble(provincias25), as.tibble(provincias2019))
+
+ 
+  
+  ## ISSUE 2
+   
+  TEST <- datos_prov %>% 
+    filter(year >= 1983) %>% 
+    select(id, name_prov) %>% 
+    distinct() %>% 
+    group_by(name_prov) %>% 
+    nest() %>% 
+    print(n = Inf)
+  
+  
+  datos_prov %>% 
+    filter(str_detect(name_prov, "LUIS")) %>% 
+    View()
+  
+  
+  datos_prov %>% 
+    filter(is.na(votos))
+  
