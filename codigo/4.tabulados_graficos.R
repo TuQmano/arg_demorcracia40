@@ -158,9 +158,9 @@ plot_concentracion <- ggplot(concentracion, aes(x = year, y =  value)) +
                   cada una de las provincias y las azules en el agregado nacional")
 
 
-dev.off()
 
-ggsave(plot = last_plot(), filename = "plots/indicadores_nacional_patchwork.png")
+ggsave(plot = last_plot(), filename = "plots/indicadores_nacional_patchwork.png", 
+       width = 15, height = 10 )
 
 
 
