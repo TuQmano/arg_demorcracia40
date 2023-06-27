@@ -372,3 +372,46 @@ bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>% # SUMA 
   fmt_number(columns = c(2,3,5,6,8,9,11,12), decimals = 2) %>% 
   gt_theme_538()  %>% 
   gtsave("plots/indicadores_provincias.png")
+
+
+
+## MAPA ELECTORES------
+
+library(sf)
+library(mapsf)
+library(geoAr)
+
+
+arg <- get_geo(geo = "ARGENTINA", level = "provincia")
+
+electores <- datos_prov %>% 
+  filter(year == 2019) %>% 
+  select(name_prov, electores) %>% 
+  distinct() %>% 
+  left_join(geo_metadata %>% select(name_prov, codprov_censo) %>% distinct()) %>% 
+  left_join(arg) %>% 
+  st_as_sf()
+
+
+
+mf_map(x = electores)
+# Circulos proporcionales 
+mf_map(add = TRUE,
+  x = electores, 
+  var = "electores",
+  type = "prop", 
+  leg_title = "Total electores\n(2019)",
+)
+# Titulo
+mf_title("Electores habilitados por provincia")
+
+
+mf_credits(
+  txt = "Fuente: {geoAr} + {electorAr} https://politicaargentina.github.io/polarverse/",
+  pos = "bottomleft",
+  cex = 0.6,
+  font = 3,
+  bg = NA
+)
+
+
