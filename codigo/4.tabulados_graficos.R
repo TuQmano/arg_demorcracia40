@@ -7,6 +7,7 @@ library(geofacet) # 'ggplot2' Faceting Utilities for Geographical Data, CRAN v0.
 library(patchwork)
 library(gt)
 library(gtExtras)
+library(ggparliament)
 
 
 # GENERO INDICADORES
@@ -413,5 +414,36 @@ mf_credits(
   font = 3,
   bg = NA
 )
+
+
+#### ggparliament ---- 
+
+## Electores y bancas
+
+
+
+### BANCAS POR CICLO ELECTORAL
+url  <- "https://raw.githubusercontent.com/electorArg/PolAr_Data/master/geo/seats_province_election_type.csv"
+
+
+bancas <- read_csv(url) %>%  # CALCULA BANCAS TOTALES POR PROVINCIA
+  group_by(codprov) %>% 
+  summarise(seats = sum(seats)) %>% 
+  left_join(geo_metadata %>% select(contains("codprov")) %>% distinct())
+
+
+votos_bancas <- electores %>% 
+  left_join(bancas) %>%
+  group_by(name_prov) %>% 
+  transmute(votos_bancas = electores/seats) %>% 
+  arrange(desc(votos_bancas)) %>% 
+  st_drop_geometry()
+
+
+
+
+
+
+
 
 
