@@ -1,6 +1,6 @@
 library(tidyverse) # Easily Install and Load the 'Tidyverse', CRAN v1.3.2
 library(electorAr)
-# ELECCIONES PRESIDENCIALES (1946 - 2019) NIVEL NACIONAL -----
+# ELECCIONES PRESIDENCIALES (1983 - 2019) NIVEL NACIONAL -----
 
 datos <- read_csv("entradas/datos.csv") %>% 
   filter(year >= 1983)
@@ -32,7 +32,7 @@ competitividad <- datos %>%
   nest_by(id) %>% 
   summarise(nep = compute_competitiveness(data))
 
-# ELECCIONES PRESIDENCIALES (1946 - 2019) NIVEL PROVINCIAL -----
+# ELECCIONES PRESIDENCIALES (1983 - 2019) NIVEL PROVINCIAL -----
 
 datos_prov <- read_csv("entradas/datos_prov.csv") %>% 
   filter(!is.na(votos), 
@@ -64,4 +64,7 @@ concentracion_prov <- datos_prov %>%
 competitividad_prov <- datos_prov %>% 
   nest_by(id) %>% 
   summarise(nep = compute_competitiveness(data))
+
+
+
 

@@ -444,16 +444,57 @@ bancas <- read_csv(url) %>%  # CALCULA BANCAS TOTALES POR PROVINCIA
   left_join(geo_metadata %>% select(contains("codprov")) %>% distinct())
 
 
-votos_bancas <- electores %>% 
+ electores %>% 
   left_join(bancas) %>%
   group_by(name_prov) %>% 
-  transmute(votos_bancas_diputados = electores/seats, 
-            votos_bancas_senadores = electores/3) %>% 
-  arrange(desc(votos_bancas_diputados)) %>% 
-  st_drop_geometry() 
+  st_drop_geometry() %>% 
+  rename(seats_diputados = seats) %>% 
+  ungroup() %>% 
+  mutate(pct_electores = electores/sum(electores), 
+         pct_dip = seats_diputados/sum(seats_diputados)) %>% 
+   arrange(desc(pct_electores)) %>%
+  select(- contains("codprov")) %>% 
+  mutate(electores_acumulados = cumsum(electores/sum(electores))) %>% 
+  select(name_prov, seats_diputados, pct_dip, electores, pct_electores, electores_acumulados) %>% 
+  mutate(representacion = round(100 * (pct_dip - pct_electores), 2)) %>% 
+  gt()  %>% 
+   
+   cols_align(
+     align = "center",
+     columns = c(electores, seats_diputados, pct_electores, pct_dip, electores_acumulados, representacion)) %>% 
+   cols_label(name_prov = md(""),
+              seats_diputados = md("Bancas"),
+              electores = "N",
+              pct_electores = md("%"),                  
+              pct_dip = md("%") ,             
+              electores_acumulados= md("% Acumulado"), 
+              representacion = "Puntos porcentuales"
+   ) %>%
+   opt_table_font(
+     font = list(
+       google_font(name = "Encode Sans")
+     )
+   ) %>% 
+   tab_spanner(label = md("**Diputados**"), columns = c(2,3)) %>%  
+   tab_spanner(label = md("**Electores 2019**"), columns = c(4,5,6)) %>% 
+   tab_spanner(label = md("**Diputados - Electores**"), columns = c(7)) %>% 
+   tab_header(
+     title = md(("**Peso político y Electoral de la Cámara de Diputados**")) #  y acumulado anual (sacado en enero)
+   ) %>%
+   tab_source_note(
+     source_note = md(
+       "**{electorAr}**: Datos y herramientas electorales de Argentina usando R https://politicaargentina.github.io/electorAr/")
+   )  %>%
+   tab_style(
+     style = 
+       cell_text(weight  = "bold"),
+     locations =  cells_body(columns = c(1))) %>% 
+   fmt_number(columns = c(2, 4), decimals = 0) %>% 
+   fmt_percent(columns = c(3, 5, 6), decimals = 1) %>% 
+   gt_theme_538()  %>% 
+   gtsave("plots/indicadores_provincias.png")
+ 
 
-votos_bancas %>% 
-  print(n = Inf)
 
 
 

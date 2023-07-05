@@ -21,17 +21,36 @@ library(tidyverse) # Easily Install and Load the 'Tidyverse', CRAN v1.3.2
            round == "gral") # Elecciones Generales
 )
 
+
+
+
+# DIPUTADOS - POR PROVINCIA 
+
+
+(elecciones_prov_dip_2019 <- show_available_elections(source = "data") %>% # Fuente de datos Andy Tow (tablas de escrutinios totales)
+    filter(district != "arg", # Nacionales 
+           category == "dip", # Presidente 
+           round == "gral", year == 2019) # Elecciones Generales
+)
+
+
+
 ### DESARGO DATOS ----
 
 # NIVEL NACIONAL
+
 datos <- get_multiple_elections(data = elecciones,
                                 source = "results", 
                                 unnest = FALSE)
  # NIVEL PROVINCIAL
 
+
+
 datos_prov <- get_multiple_elections(data = elecciones_prov,
                                 source = "results", 
                                 unnest = FALSE)
+
+
 
 ### GENERO BASE DE TRABAJO
 
