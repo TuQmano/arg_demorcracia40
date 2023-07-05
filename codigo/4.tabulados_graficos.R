@@ -87,7 +87,8 @@ plot_participacion <- ggplot(participacion, aes(x = year, y =  value)) +
   theme_minimal() +
   theme(axis.text.y = element_text(color = "black"),
         panel.grid.major = element_blank(),
-        panel.grid.minor.x  = element_blank())
+        panel.grid.minor.x  = element_blank(), 
+        axis.text = element_blank())
 
 
 
@@ -142,7 +143,8 @@ plot_concentracion <- ggplot(concentracion, aes(x = year, y =  value)) +
   theme_minimal() +
   theme(axis.text.y = element_text(color = "black"),
         panel.grid.major = element_blank(),
-        panel.grid.minor.x  = element_blank())
+        panel.grid.minor.x  = element_blank(), 
+        axis.text = element_blank())
 
 
 
@@ -150,8 +152,8 @@ plot_concentracion <- ggplot(concentracion, aes(x = year, y =  value)) +
 
 ##### ggplot + patchwork ----
 
-(plot_competitividad + plot_concentracion) / 
-  (plot_participacion + plot_nep)+
+(plot_participacion + plot_concentracion) / 
+  ( plot_competitividad + plot_nep ) +
   plot_annotation(title = "Elecciones Presidenciales en Argentina", 
                   subtitle = "Principales Indicadores (1946 - 2019)", 
                   tag_levels = "i", 
@@ -194,10 +196,13 @@ participacion <- participacion %>%
 bind_rows(competitividad, concentracion, nep, participacion) %>% 
   pivot_wider(id_cols = year, names_from = i, values_from = value) %>%
   filter(year >= 1983) %>% 
+  select(year, participacion, concentracion, competitividad, nep) %>% 
+  summarise(year = c(year, 'Promedio'),
+            across(where(is.numeric), ~ c(., mean(.))))%>% 
   gt() %>% 
-  fmt_number(columns = c(2, 3,4), decimals = 2, 
+  fmt_number(columns = c(3,4,5), decimals = 2, 
              sep_mark = ".", dec_mark = ",") %>% 
-  fmt_percent(columns = c(5), decimals = 1, 
+  fmt_percent(columns = c(2), decimals = 1, 
               dec_mark = ",", sep_mark = ".") %>% 
   cols_align(
     align = "center",
@@ -224,7 +229,14 @@ bind_rows(competitividad, concentracion, nep, participacion) %>%
     style = 
       cell_text(weight  = "bold"),
     locations =  cells_body(columns = c(1))) %>% 
-  gt_theme_538()  %>%  
+  gt_theme_538() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "#d6d2d2")
+    ),
+    locations = cells_body( # not needed if coloring all columns
+      rows = 10)
+  ) %>% 
   gtsave("plots/indicadores_nacional.png")
 
 
@@ -435,10 +447,13 @@ bancas <- read_csv(url) %>%  # CALCULA BANCAS TOTALES POR PROVINCIA
 votos_bancas <- electores %>% 
   left_join(bancas) %>%
   group_by(name_prov) %>% 
-  transmute(votos_bancas = electores/seats) %>% 
-  arrange(desc(votos_bancas)) %>% 
-  st_drop_geometry()
+  transmute(votos_bancas_diputados = electores/seats, 
+            votos_bancas_senadores = electores/3) %>% 
+  arrange(desc(votos_bancas_diputados)) %>% 
+  st_drop_geometry() 
 
+votos_bancas %>% 
+  print(n = Inf)
 
 
 
