@@ -272,32 +272,6 @@ prov_names <- geo_metadata %>%
   select(codprov, name_prov) %>% 
   distinct()
 
-#### GANADOR PAIS / PROVINCIAS para win-loss plot GT
-
-
-pais_ganador <- datos %>% 
-  group_by(year) %>% 
-  slice_max(votos) %>% 
-  select(listas, name_prov, year) %>% 
-  transmute(ganadorPais = paste(year, listas))
-
-
-datos_prov %>% 
-  group_by(name_prov, year) %>% 
-  slice_max(votos) %>% 
-  transmute(ganador = paste(year, listas)) %>% 
-  left_join(pais_ganador) %>% 
-  print(n = Inf)
-
-datos_prov %>% 
-  group_by(name_prov, year) %>% 
-  slice_max(votos) %>% 
-  ungroup() %>% 
-  transmute(ganador = paste(year, listas)) %>% 
-  distinct() %>% 
-  print(n = Inf)
-
-
 
 #### TABLA INDICADORES
 
@@ -492,13 +466,44 @@ bancas <- read_csv(url) %>%  # CALCULA BANCAS TOTALES POR PROVINCIA
    fmt_number(columns = c(2, 4), decimals = 0) %>% 
    fmt_percent(columns = c(3, 5, 6), decimals = 1) %>% 
    gt_theme_538()  %>% 
-   gtsave("plots/indicadores_provincias.png")
+   gtsave("plots/peso_diputados.png")
  
 
 
+### Win - Loss GT PLOTS
+ 
+ 
+ ganadores <- read_csv("entradas/ganador-data.csv") %>%
+   select(-1) %>% 
+   mutate(match = ifelse(is.na(match), 0, match)) %>% 
+   select(name_prov, year ,match)
 
-
-
+ganadores %>% 
+  group_by(name_prov) %>% 
+  summarise(wins = list(match), .groups = "drop") %>% 
+  gt() %>%
+  gt_plt_winloss(wins,
+                 max_wins = 9,
+                 palette = c("#013369", "#D50A0A", "gray"),
+                 type = "pill")  %>% 
+  cols_label(name_prov = md(""),
+             wins = md("Nacional = Provincial")) %>% 
+  gt_theme_538()  %>% 
+  tab_header(
+    title = md(("**Congruencia de Resultados**")), 
+    subtitle = "Resultado Ganador en Elecciones Generales a Presidente (1983 - 2019)"#  y acumulado anual (sacado en enero)
+  ) %>%
+  tab_source_note(
+    source_note = md(
+      "**{electorAr}**: Datos y herramientas electorales de Argentina usando R https://politicaargentina.github.io/electorAr/")
+  )  %>%
+  tab_footnote(footnote = "*Notar que al tratarse de la elección general, para los años 2003 y 2015 la lista más votada a nivel nacional no fue la que terminó ganando la presidencia.") %>% 
+  tab_style(
+    style = 
+      cell_text(weight  = "bold"),
+    locations =  cells_body(columns = c(1)))   %>% 
+  gtsave("plots/win_loss.png")
+             
 
 
 

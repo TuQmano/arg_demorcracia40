@@ -51,3 +51,34 @@ provincias2019 <- elecciones_filtrado %>%
   datos_prov %>% 
     filter(is.na(votos))
   
+  
+  
+  # GENERO TABLA GANADOR PROVINCIA - PAIS (PRESIDENCIAL)
+  
+  
+  #### GANADOR PAIS / PROVINCIAS para win-loss plot GT
+  
+  
+  pais_ganador <- datos %>% 
+    group_by(year) %>% 
+    slice_max(votos) %>% 
+    select(listas, name_prov, year) %>% 
+    transmute(ganadorPais = paste(year, listas))
+  
+  
+  comparacion <- datos_prov %>% 
+    group_by(name_prov, year) %>% 
+    slice_max(votos) %>% 
+    transmute(ganador = paste(year, listas)) %>% 
+    left_join(pais_ganador) %>% 
+    print(n = Inf)
+  
+ 
+  comparacion %>% mutate(match = NA) %>% DataEditR::data_edit()
+  
+  # GUARDADO COMO FILE DESDE APP DE EDICION MANUAL
+  
+  
+  
+  
+  

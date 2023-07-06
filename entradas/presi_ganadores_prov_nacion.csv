@@ -1,0 +1,217 @@
+"","name_prov","year","ganador","ganadorPais","match"
+"1","BUENOS AIRES",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"2","BUENOS AIRES",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"3","BUENOS AIRES",1995,"1995 Justicialista","1995 Menem - Ruckauf",NA
+"4","BUENOS AIRES",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"5","BUENOS AIRES",2003,"2003 Kirchner-Scioli (Alianza Frente Para La Victoria)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"6","BUENOS AIRES",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"7","BUENOS AIRES",2011,"2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"8","BUENOS AIRES",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"9","BUENOS AIRES",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"10","CABA",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"11","CABA",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"12","CABA",1995,"1995 Alianza Frente Del País Solidario","1995 Menem - Ruckauf",NA
+"13","CABA",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"14","CABA",2003,"2003 López Murphy-Gómez Diez (Alianza Federal Para Recrear El Crecimento)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"15","CABA",2007,"2007 Carrió - Giustiniani (Alianza Confederacion Coalicion Civica)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"16","CABA",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"17","CABA",2015,"2015 Macri - Michetti (Alianza Cambiemos)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"18","CABA",2019,"2019 Macri - Pichetto (Juntos Por El Cambio)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"19","CATAMARCA",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"20","CATAMARCA",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"21","CATAMARCA",1995,"1995 Alianza Frente Justicialista","1995 Menem - Ruckauf",NA
+"22","CATAMARCA",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"23","CATAMARCA",2003,"2003 Menem-Romero (Alianza Frente Por La Lealtad - Union De Centro Democratico)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"24","CATAMARCA",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"25","CATAMARCA",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"26","CATAMARCA",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"27","CATAMARCA",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"28","CHACO",1983,"1983 Justicialista","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"29","CHACO",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"30","CHACO",1995,"1995 Justicialista","1995 Menem - Ruckauf",NA
+"31","CHACO",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"32","CHACO",2003,"2003 Menem-Romero (Alianza Frente Por La Lealtad - Union De Centro Democratico)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"33","CHACO",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"34","CHACO",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"35","CHACO",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"36","CHACO",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"37","CHUBUT",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"38","CHUBUT",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"39","CHUBUT",1995,"1995 Justicialista","1995 Menem - Ruckauf",NA
+"40","CHUBUT",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"41","CHUBUT",2003,"2003 Kirchner-Scioli (Alianza Frente Para La Victoria)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"42","CHUBUT",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"43","CHUBUT",2011,"2011 Fernández de Kirchner - Boudou (ALIANZA FRENTE PARA LA VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"44","CHUBUT",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"45","CHUBUT",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"46","CORDOBA",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"47","CORDOBA",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"48","CORDOBA",1995,"1995 Justicialista","1995 Menem - Ruckauf",NA
+"49","CORDOBA",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"50","CORDOBA",2003,"2003 Menem-Romero (Alianza Frente Por La Lealtad - Union De Centro Democratico)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"51","CORDOBA",2007,"2007 Lavagna - Morales (Alianza Concertacion Para Una Nacion Avanzada)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"52","CORDOBA",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"53","CORDOBA",2015,"2015 Macri - Michetti (Alianza Cambiemos)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"54","CORDOBA",2019,"2019 Macri - Pichetto (Juntos Por El Cambio)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"55","CORRIENTES",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"56","CORRIENTES",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"57","CORRIENTES",1995,"1995 Alianza Frente Justicialista","1995 Menem - Ruckauf",NA
+"58","CORRIENTES",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"59","CORRIENTES",2003,"2003 Menem-Romero (Alianza Frente Por La Lealtad - Union De Centro Democratico)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"60","CORRIENTES",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"61","CORRIENTES",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"62","CORRIENTES",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"63","CORRIENTES",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"64","ENTRE RIOS",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"65","ENTRE RIOS",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"66","ENTRE RIOS",1995,"1995 Alianza Frente Justicialista Entrerriano","1995 Menem - Ruckauf",NA
+"67","ENTRE RIOS",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"68","ENTRE RIOS",2003,"2003 Menem-Romero (Alianza Frente Por La Lealtad - Union De Centro Democratico)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"69","ENTRE RIOS",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"70","ENTRE RIOS",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"71","ENTRE RIOS",2015,"2015 Macri - Michetti (Alianza Cambiemos)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"72","ENTRE RIOS",2019,"2019 Macri - Pichetto (Juntos Por El Cambio)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"73","FORMOSA",1983,"1983 Justicialista","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"74","FORMOSA",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"75","FORMOSA",1995,"1995 Justicialista","1995 Menem - Ruckauf",NA
+"76","FORMOSA",1999,"1999 Duhalde - Ortega (Alianza Concertacion Justicialista Para El Cambio)","1999 De La Rua - Alvarez",NA
+"77","FORMOSA",2003,"2003 Kirchner-Scioli (Alianza Frente Para La Victoria)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"78","FORMOSA",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"79","FORMOSA",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"80","FORMOSA",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"81","FORMOSA",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"82","JUJUY",1983,"1983 Justicialista","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"83","JUJUY",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"84","JUJUY",1995,"1995 Frente Justicialista Popular","1995 Menem - Ruckauf",NA
+"85","JUJUY",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"86","JUJUY",2003,"2003 Kirchner-Scioli (Alianza Frente Para La Victoria)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"87","JUJUY",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"88","JUJUY",2011,"2011 Fernández de Kirchner - Boudou (ALIANZA FRENTE PARA LA VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"89","JUJUY",2015,"2015 Massa - Saenz (Alianza Unidos Por Una Nueva Alternativa)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"90","JUJUY",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"91","LA PAMPA",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"92","LA PAMPA",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"93","LA PAMPA",1995,"1995 Justicialista","1995 Menem - Ruckauf",NA
+"94","LA PAMPA",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"95","LA PAMPA",2003,"2003 Menem-Romero (Alianza Frente Por La Lealtad - Union De Centro Democratico)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"96","LA PAMPA",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"97","LA PAMPA",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"98","LA PAMPA",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"99","LA PAMPA",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"100","LA RIOJA",1983,"1983 Justicialista","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"101","LA RIOJA",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"102","LA RIOJA",1995,"1995 Justicialista","1995 Menem - Ruckauf",NA
+"103","LA RIOJA",1999,"1999 Duhalde - Ortega (Alianza Concertacion Justicialista Para El Cambio)","1999 De La Rua - Alvarez",NA
+"104","LA RIOJA",2003,"2003 Menem-Romero (Alianza Frente Por La Lealtad - Union De Centro Democratico)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"105","LA RIOJA",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"106","LA RIOJA",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"107","LA RIOJA",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"108","LA RIOJA",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"109","MENDOZA",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"110","MENDOZA",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"111","MENDOZA",1995,"1995 Justicialista","1995 Menem - Ruckauf",NA
+"112","MENDOZA",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"113","MENDOZA",2003,"2003 Rodríguez Saa-Posse (Alianza Frente Movimiento Popular - Union Y Libertad)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"114","MENDOZA",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"115","MENDOZA",2011,"2011 Fernández de Kirchner - Boudou (ALIANZA FRENTE PARA LA VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"116","MENDOZA",2015,"2015 Macri - Michetti (Alianza Cambiemos)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"117","MENDOZA",2019,"2019 Macri - Pichetto (Juntos Por El Cambio)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"118","MISIONES",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"119","MISIONES",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"120","MISIONES",1995,"1995 Frente Justicialista Popular","1995 Menem - Ruckauf",NA
+"121","MISIONES",1999,"1999 Duhalde - Ortega (Alianza Concertacion Justicialista Para El Cambio)","1999 De La Rua - Alvarez",NA
+"122","MISIONES",2003,"2003 Menem - Romero (Alianza Frente Por La Lealtad - Union De Centro Democratico)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"123","MISIONES",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"124","MISIONES",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"125","MISIONES",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"126","MISIONES",2019,"2019 Fernández.-.Fernández.(FRENTE.DE.TODOS)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"127","NEUQUEN",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"128","NEUQUEN",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"129","NEUQUEN",1995,"1995 Justicialista","1995 Menem - Ruckauf",NA
+"130","NEUQUEN",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"131","NEUQUEN",2003,"2003 Kirchner-Scioli (Alianza Frente Para La Victoria)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"132","NEUQUEN",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"133","NEUQUEN",2011,"2011 Fernández de Kirchner - Boudou (ALIANZA FRENTE PARA LA VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"134","NEUQUEN",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"135","NEUQUEN",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"136","RIO NEGRO",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"137","RIO NEGRO",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"138","RIO NEGRO",1995,"1995 Alianza Frente Para El Cambio","1995 Menem - Ruckauf",NA
+"139","RIO NEGRO",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"140","RIO NEGRO",2003,"2003 Kirchner-Scioli (Alianza Frente Para La Victoria)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"141","RIO NEGRO",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"142","RIO NEGRO",2011,"2011 Fernández de Kirchner - Boudou (ALIANZA FRENTE PARA LA VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"143","RIO NEGRO",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"144","RIO NEGRO",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"145","SALTA",1983,"1983 Justicialista","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"146","SALTA",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"147","SALTA",1995,"1995 Frente Justicialista","1995 Menem - Ruckauf",NA
+"148","SALTA",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"149","SALTA",2003,"2003 Menem-Romero (Alianza Frente Por La Lealtad - Union De Centro Democratico)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"150","SALTA",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"151","SALTA",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"152","SALTA",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"153","SALTA",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"154","SAN JUAN",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"155","SAN JUAN",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"156","SAN JUAN",1995,"1995 Alianza Frente Justicialista Popular","1995 Menem - Ruckauf",NA
+"157","SAN JUAN",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"158","SAN JUAN",2003,"2003 Rodríguez Saa-Posse (Alianza Frente Movimiento Popular - Union Y Libertad)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"159","SAN JUAN",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"160","SAN JUAN",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"161","SAN JUAN",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"162","SAN JUAN",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"163","SAN LUIS",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"164","SAN LUIS",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"165","SAN LUIS",1995,"1995 Justicialista","1995 Menem - Ruckauf",NA
+"166","SAN LUIS",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"167","SAN LUIS",2003,"2003 Rodríguez Saa-Posse (Alianza Frente Movimiento Popular - Union Y Libertad)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"168","SAN LUIS",2007,"2007 Rodriguez Saá - Maya (Alianza Frente Justicia, Union Y Libertad)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"169","SAN LUIS",2011,"2011 Rodríguez.Saa.-.Vernet.(ALIANZA.COMPROMISO.FEDERAL)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"170","SAN LUIS",2015,"2015 Rodriguez Saa - Negre De Alonso (Alianza Compromiso Federal)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"171","SAN LUIS",2019,"2019 Macri - Pichetto (Juntos Por El Cambio)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"172","SANTA CRUZ",1983,"1983 Justicialista","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"173","SANTA CRUZ",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"174","SANTA CRUZ",1995,"1995 Justicialista","1995 Menem - Ruckauf",NA
+"175","SANTA CRUZ",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"176","SANTA CRUZ",2003,"2003 Kirchner-Scioli (Alianza Frente Para La Victoria)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"177","SANTA CRUZ",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"178","SANTA CRUZ",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"179","SANTA CRUZ",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"180","SANTA CRUZ",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"181","SANTA FE",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"182","SANTA FE",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"183","SANTA FE",1995,"1995 Alianza Frente Pais Solidario","1995 Menem - Ruckauf",NA
+"184","SANTA FE",1999,"1999 De La Rua - Alvarez","1999 De La Rua - Alvarez",NA
+"185","SANTA FE",2003,"2003 Menem-Romero (Alianza Frente Por La Lealtad - Union De Centro Democratico)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"186","SANTA FE",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"187","SANTA FE",2011,"2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"188","SANTA FE",2015,"2015 Macri - Michetti (Alianza Cambiemos)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"189","SANTA FE",2019,"2019 Macri - Pichetto (Juntos Por El Cambio)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"190","SANTIAGO DEL ESTERO",1983,"1983 Justicialista","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"191","SANTIAGO DEL ESTERO",1989,"1989 Frente Corriente Renovadora","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"192","SANTIAGO DEL ESTERO",1995,"1995 Alianza Frente Justicialista","1995 Menem - Ruckauf",NA
+"193","SANTIAGO DEL ESTERO",1999,"1999 Duhalde - Ortega (Alianza Concertacion Justicialista Para El Cambio)","1999 De La Rua - Alvarez",NA
+"194","SANTIAGO DEL ESTERO",2003,"2003 Menem-Romero (Alianza Frente Por La Lealtad - Union De Centro Democratico)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"195","SANTIAGO DEL ESTERO",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"196","SANTIAGO DEL ESTERO",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"197","SANTIAGO DEL ESTERO",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"198","SANTIAGO DEL ESTERO",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"199","TIERRA DEL FUEGO",1983,"1983 Union Civica Radical","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"200","TIERRA DEL FUEGO",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"201","TIERRA DEL FUEGO",1995,"1995 Justicialista","1995 Menem - Ruckauf",NA
+"202","TIERRA DEL FUEGO",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"203","TIERRA DEL FUEGO",2003,"2003 Kirchner-Scioli (Alianza Frente Para La Victoria)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"204","TIERRA DEL FUEGO",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"205","TIERRA DEL FUEGO",2011,"2011 Fernández de Kirchner - Boudou (ALIANZA FRENTE PARA LA VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"206","TIERRA DEL FUEGO",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"207","TIERRA DEL FUEGO",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
+"208","TUCUMAN",1983,"1983 Justicialista","1983 Alfonsin - Martinez (Union Civica Radical)",NA
+"209","TUCUMAN",1989,"1989 Frente Justicialista Popular","1989 Menem - Duhalde (Frente Justicialista De Unidad Popular)",NA
+"210","TUCUMAN",1995,"1995 Frente De La Esperanza","1995 Menem - Ruckauf",NA
+"211","TUCUMAN",1999,"1999 De La Rua - Alvarez (Alianza Para El Trabajo, La Justicia Y La Educacion)","1999 De La Rua - Alvarez",NA
+"212","TUCUMAN",2003,"2003 Menem-Romero (Alianza Frente Por La Lealtad - Union De Centro Democratico)","2003 Menem - Romero (Alianza Frente Por La Lealtad-Ucede)",NA
+"213","TUCUMAN",2007,"2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)","2007 Fernández De Kirchner - Cobos (Alianza Frente Para La Victoria)",NA
+"214","TUCUMAN",2011,"2011 Fernández.de.Kirchner.-.Boudou.(ALIANZA.FRENTE.PARA.LA.VICTORIA)","2011 Fernández De Kirchner - Boudou (Alianza Frente Para La Victoria)",NA
+"215","TUCUMAN",2015,"2015 Scioli - Zaninni (Alianza Frente Para La Victoria)","2015 Scioli - Zaninni (Alianza Frente Para La Victoria)",NA
+"216","TUCUMAN",2019,"2019 Fernández - Fernández De Kirchner (Frente De Todos)","2019 Fernández - Fernández De Kirchner (Frente De Todos)",NA
