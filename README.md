@@ -24,18 +24,15 @@ Ruiz Nicolini.
 
 ## Indicadores relevados
 
-- El análisis se concentra principalmente en datos relativos a las
-  elecciones presidenciales desde el retorno de la democracia (1983
-  -2019)
+1.  El análisis se concentra principalmente en datos relativos a las
+    elecciones presidenciales desde el retorno de la democracia (1983
+    -2019)
 
-- Se comparten datos e indicadores tales como:
+2.  Se comparten datos e indicadores tales como:
 
 - Número Efectivo de Partidos (NEP)
-
 - Particiación electoral
-
 - Competitividad
-
 - Concentración
 
 ## La estructura de los archivos se organiza del siguiente modo:
