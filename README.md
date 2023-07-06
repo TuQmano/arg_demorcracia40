@@ -30,7 +30,7 @@ Ruiz Nicolini.
 
 - Se comparten datos e indicadores tales como:
 
-- Núnero Efectivo de Partidos (NEP)
+- Número Efectivo de Partidos (NEP)
 
 - Particiación electoral
 
@@ -40,11 +40,15 @@ Ruiz Nicolini.
 
 ## La estructura de los archivos se organiza del siguiente modo:
 
-1.  En [codigo](%22/codigo%22) se encuentran los *scripts* para:
+1.  En
+    [codigo](%22https://github.com/TuQmano/arg_demorcracia40/tree/main/codigo%22)
+    se encuentran los *scripts* para:
 
 - Descarga de datos
-- Genración de indicadores
+- Generación de indicadores
 - Tabulados y Gráficos
 
-2.  En [plots](%22/plots%22) se guardan las salidas (gráficos y tablas)
-    que ilustran los indicadores
+2.  En
+    [plots](%22https://github.com/TuQmano/arg_demorcracia40/tree/main/plots%22)
+    se guardan las salidas (gráficos y tablas) que ilustran los
+    indicadores
