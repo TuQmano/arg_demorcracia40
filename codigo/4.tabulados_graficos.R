@@ -155,8 +155,7 @@ plot_concentracion <- ggplot(concentracion, aes(x = year, y =  value)) +
 
 (plot_participacion + plot_concentracion) / 
   ( plot_competitividad + plot_nep ) +
-  plot_annotation(title = "Elecciones Presidenciales en Argentina", 
-                  subtitle = "Principales Indicadores (1946 - 2019)", 
+  plot_annotation(title = "Principales Indicadores (1946 - 2019)", 
                   tag_levels = "i", 
                   caption = "Las lineas grises muestran los valores de cada indicador para las elecciones para
                   cada una de las provincias y las azules en el agregado nacional")
@@ -220,7 +219,7 @@ bind_rows(competitividad, concentracion, nep, participacion) %>%
   ) %>% 
   tab_spanner(label = md("**Indicadores**"), columns = c(2,3,4,5)) %>% 
   tab_header(
-    title = md(("**El presidencialismo Argentino (1983 - 2019)**")) #  y acumulado anual (sacado en enero)
+    title = md(("**Gráfico 3.** El presidencialismo Argentino (1983 - 2019)")) #  y acumulado anual (sacado en enero)
     ) %>%
   tab_source_note(
     source_note = md(
@@ -347,7 +346,7 @@ bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>% # SUMA 
   tab_spanner(label = md("**Competitividad**"), columns = c(8,9,10)) %>% 
   tab_spanner(label = md("**NEP**"), columns = c(11,12,13)) %>% 
   tab_header(
-    title = md(("**El presidencialismo Argentino (1983 - 2019)**")) #  y acumulado anual (sacado en enero)
+    title = md(("**Gráfico 5. Comportamiento Electoral en las Provincias**")) #  y acumulado anual (sacado en enero)
   ) %>%
   tab_source_note(
     source_note = md(
@@ -391,9 +390,6 @@ mf_map(add = TRUE,
   type = "prop", 
   leg_title = "Total electores\n(2019)",
 )
-# Titulo
-mf_title("Electores habilitados por provincia")
-
 
 mf_credits(
   txt = "Fuente: {geoAr} + {electorAr} https://politicaargentina.github.io/polarverse/",
@@ -452,7 +448,7 @@ bancas <- read_csv(url) %>%  # CALCULA BANCAS TOTALES POR PROVINCIA
    tab_spanner(label = md("**Electores 2019**"), columns = c(4,5,6)) %>% 
    tab_spanner(label = md("**Diputados - Electores**"), columns = c(7)) %>% 
    tab_header(
-     title = md(("**Peso político y Electoral de la Cámara de Diputados**")) #  y acumulado anual (sacado en enero)
+     title = md(("**Gráfico 2**: Peso político y Electoral de la Cámara de Diputados")) #  y acumulado anual (sacado en enero)
    ) %>%
    tab_source_note(
      source_note = md(
@@ -489,7 +485,7 @@ ganadores %>%
              wins = md("Nacional = Provincial")) %>% 
   gt_theme_538()  %>% 
   tab_header(
-    title = md(("**Congruencia de Resultados**")), 
+    title = md(("**Gráfico 6.** Congruencia de Resultados")), 
     subtitle = "Resultado Ganador en Elecciones Generales a Presidente (1983 - 2019)"#  y acumulado anual (sacado en enero)
   ) %>%
   tab_source_note(
@@ -563,8 +559,7 @@ hrbrthemes::theme_ipsum() +
   scale_x_discrete(position = 'top', breaks = c('1983','1987','1991','1995','1999',
                                                 '2003','2007','2011','2015','2019','2023')) +
   labs(fill = '', 
-       title = 'Gobiernos provinciales', 
-       subtitle = '1983 - 2003', 
+       title = '', 
        caption = 'Fuente: Elaboración propia, actualización y adaptación a partir de Malamud y De Luca (2016)') 
   
 dev.off()
