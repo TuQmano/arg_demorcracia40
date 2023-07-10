@@ -49,12 +49,12 @@ plot_nep <- ggplot(nep, aes(x = year, y =  value)) +
   geom_line(data = nep_prov, 
             aes(x = year, y =  value, group = codprov),
             color = "grey", size = 1) +
-  geom_path(linejoin = "round", color = "blue",
+  geom_path(linejoin = "round", color = "black",
             lineend = "round", size = 2, alpha = .4)+
-  geom_vline(xintercept = nep$year, alpha = .3, color = "red") +
+  geom_vline(xintercept = nep$year, alpha = .3, color = "black",  linetype = 'dashed') +
 #  ggthemes::theme_fivethirtyeight() +
-  geom_point(aes(year, value),nudge_y = 3, color = "blue") +
-  geom_text(aes(year, value, label = year),nudge_y = .5, color = "blue") +
+  geom_point(aes(year, value),nudge_y = 3, color = "black") +
+  geom_text(aes(year, value, label = year),nudge_y = .5, color = "black") +
   labs(title = "Número Efectivo de Partidos (NEP)", 
        #subtitle = "Categoría Presidente - Elecciones 1946 - 2019", 
        caption = "Indice Laakso-Taagepera", 
@@ -75,12 +75,12 @@ plot_participacion <- ggplot(participacion, aes(x = year, y =  value)) +
   geom_line(data = participacion_prov, 
             aes(x = year, y =  value, group = district),
             color = "grey", size = 1) +
-  geom_path(linejoin = "round", color = "blue",
+  geom_path(linejoin = "round", color = "black",
             lineend = "round", size = 2, alpha = .4)+
-  geom_vline(xintercept = nep$year, alpha = .3, color = "red") +
+  geom_vline(xintercept = nep$year, alpha = .3, color = "black",  linetype = 'dashed', linetype = "dashed") +
   #  ggthemes::theme_fivethirtyeight() +
-  geom_point(aes(year, value),nudge_y = 3, color = "blue") +
-  geom_text(aes(year, value, label = year),nudge_y = 3, color = "blue") +
+  geom_point(aes(year, value),nudge_y = 3, color = "black") +
+  geom_text(aes(year, value, label = year),nudge_y = 3, color = "black") +
   labs(title = "Participación", 
        #subtitle = "Categoría Presidente - Elecciones 1946 - 2019", 
        caption = "Votantes / Electores", 
@@ -103,12 +103,12 @@ plot_competitividad <- ggplot(competitividad, aes(x = year, y =  value)) +
   geom_line(data = competitividad_prov %>% rename(value = competitividad), 
             aes(x = year, y =  value, group = codprov),
             color = "grey", size = 1) +
-  geom_path(linejoin = "round", color = "blue",
+  geom_path(linejoin = "round", color = "black",
             lineend = "round", size = 2, alpha = .4)+
-  geom_vline(xintercept = nep$year, alpha = .3, color = "red") +
+  geom_vline(xintercept = nep$year, alpha = .3, color = "black",  linetype = 'dashed') +
   #  ggthemes::theme_fivethirtyeight() +
-  geom_point(aes(year, value),nudge_y = 3, color = "blue") +
-  geom_text(aes(year, value, label = year),nudge_y = .05, color = "blue") +
+  geom_point(aes(year, value),nudge_y = 3, color = "black") +
+  geom_text(aes(year, value, label = year),nudge_y = .05, color = "black") +
   labs(title = "Competitividad", 
        #subtitle = "Categoría Presidente - Elecciones 1946 - 2019", 
        caption = "Mide la diferencia porcentual de votos válidos obtenidos por los dos partidos más votados 𝑎
@@ -131,12 +131,12 @@ plot_concentracion <- ggplot(concentracion, aes(x = year, y =  value)) +
   geom_line(data = concentracion_prov %>% rename(value = concentration), 
             aes(x = year, y =  value, group = codprov),
             color = "grey", size = 1) +
-  geom_path(linejoin = "round", color = "blue",
+  geom_path(linejoin = "round", color = "black",
             lineend = "round", size = 2, alpha = .4)+
-  geom_vline(xintercept = nep$year, alpha = .3, color = "red") +
+  geom_vline(xintercept = nep$year, alpha = .3, color = "black",  linetype = 'dashed') +
   #  ggthemes::theme_fivethirtyeight() +
-  geom_point(aes(year, value),nudge_y = 3, color = "blue") +
-  geom_text(aes(year, value, label = year),nudge_y = .05, color = "blue") +
+  geom_point(aes(year, value),nudge_y = 3, color = "black") +
+  geom_text(aes(year, value, label = year),nudge_y = .05, color = "black") +
   labs(title = "Concentración", 
        #subtitle = "Categoría Presidente - Elecciones 1946 - 2019", 
        caption = "Porecentaje acumulado de las dos listas más votadas", 
@@ -302,19 +302,19 @@ bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>% # SUMA 
   
    # mini sparklines plots por indicador (`gtExtras`)
   gt_plt_sparkline(type = "ref_mean",
-                  column = competitividad, fig_dim = c(8, 20), palette = c( "black", "black", "red", "green", "blue")
+                  column = competitividad, fig_dim = c(8, 20), palette = c( "black", "black", "black", "black", "black")
   ) %>% 
   
   gt_plt_sparkline(type = "ref_mean",
-                   column = nep, fig_dim = c(8, 20) , palette = c( "black", "black", "red", "green", "blue")
+                   column = nep, fig_dim = c(8, 20) , palette = c( "black", "black", "black", "black", "black")
   ) %>%
   
   gt_plt_sparkline(type = "ref_mean",
-                   column = concentracion, fig_dim = c(8, 20) , palette = c( "black", "black", "red", "green", "blue")
+                   column = concentracion, fig_dim = c(8, 20) , palette = c( "black", "black", "black", "black", "black")
   ) %>% 
   
   gt_plt_sparkline(type = "ref_mean",
-                   column = participacion, fig_dim = c(8, 20) , palette = c( "black", "black", "red", "green", "blue")
+                   column = participacion, fig_dim = c(8, 20) , palette = c( "black", "black", "black", "black", "black")
   ) %>% 
  
   
@@ -384,7 +384,8 @@ electores <- datos_prov %>%
 
 mf_map(x = electores)
 # Circulos proporcionales 
-mf_map(add = TRUE,
+mf_map(add = TRUE, 
+       col = "black",
   x = electores, 
   var = "electores",
   type = "prop", 
@@ -401,9 +402,6 @@ mf_credits(
   font = 3,
   bg = NA
 )
-
-
-#### ggparliament ---- 
 
 ## Electores y bancas
 
@@ -485,7 +483,7 @@ ganadores %>%
   gt() %>%
   gt_plt_winloss(wins,
                  max_wins = 9,
-                 palette = c("#013369", "#D50A0A", "gray"),
+                 palette = c("#000000", "#AAAAAA", "gray"),
                  type = "pill")  %>% 
   cols_label(name_prov = md(""),
              wins = md("Nacional = Provincial")) %>% 
@@ -502,9 +500,12 @@ ganadores %>%
   tab_style(
     style = 
       cell_text(weight  = "bold"),
-    locations =  cells_body(columns = c(1)))   %>% 
+    locations =  cells_body(columns = c(1))) %>%
+  cols_width(
+    everything() ~ px(180)
+  )  %>% 
   gtsave("plots/win_loss.png")
-             
+
 
 
 ### GOBERNADORES HEATMAP ----
@@ -549,17 +550,16 @@ gobers_years %>%
     is.na(party) ~ NA, TRUE ~ "Otros"
   ))  %>% 
   ggplot() +
-  geom_tile(aes(x = years, y = reorder(Provincia, desc(Provincia)),
-                fill = party_color)) +
-  hrbrthemes::theme_ipsum() +
+  geom_tile(aes(x = years, y = reorder(Provincia, desc(Provincia), label = party), fill = party_color), color = "black") +
+hrbrthemes::theme_ipsum() +
   theme(axis.text.x = element_text(angle = 90), legend.position = 'top', 
         axis.title.x = element_blank(), 
         axis.title.y = element_blank()) +
-  scale_fill_manual(values = c("PJ" = "blue", 
-                               "UCR" = "red", 
-                               "PRO" = "gold", 
-                               "IF" = "black", 
-                               "Otros" = 'darkgreen'), na.value = "white") +
+  scale_fill_manual(values = c("PJ" = "#000000", 
+                               "UCR" = "#4d4c4c", 
+                               "PRO" = "#858383", 
+                               "IF" = "#e6d3d3", 
+                               "Otros" = '#bfbbbb'), na.value = "white") +
   scale_x_discrete(position = 'top', breaks = c('1983','1987','1991','1995','1999',
                                                 '2003','2007','2011','2015','2019','2023')) +
   labs(fill = '', 
@@ -569,6 +569,6 @@ gobers_years %>%
   
 dev.off()
 
-ggsave(filename = 'plots/gobers_heatmap.png')
+ggsave(filename = 'plots/gobers_heatmap_blanco_negro.png')
 
  
