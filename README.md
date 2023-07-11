@@ -7,7 +7,7 @@ Este proyecto se corresponde con la sección **Una democracia en datos**
 del artículo en colaboración entre Juan Manuel Abal Medina y Juan Pablo
 Ruiz Nicolini.
 
-![](plots/indicadores_nacional_patchwork.png)<!-- -->
+![](plots/indicadores_nacional_patchwork.png)<!-- -->![](plots/gobers_heatmap_blanco_negro.png)<!-- -->
 
 ## CONTENIDO
 
@@ -38,7 +38,7 @@ Ruiz Nicolini.
 ## La estructura de los archivos se organiza del siguiente modo:
 
 1.  En
-    [codigo](%22https://github.com/TuQmano/arg_demorcracia40/tree/main/codigo%22)
+    [codigo](https://github.com/TuQmano/arg_demorcracia40/tree/main/codigo)
     se encuentran los *scripts* para:
 
 - Descarga de datos
@@ -46,6 +46,6 @@ Ruiz Nicolini.
 - Tabulados y Gráficos
 
 2.  En
-    [plots](%22https://github.com/TuQmano/arg_demorcracia40/tree/main/plots%22)
+    [plots](https://github.com/TuQmano/arg_demorcracia40/tree/main/plots)
     se guardan las salidas (gráficos y tablas) que ilustran los
     indicadores

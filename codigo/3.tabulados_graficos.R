@@ -1,5 +1,7 @@
 #### TABULADOS Y GRAFICOS
 
+### Cargo librerias -----
+
 library(tidyverse) # Easily Install and Load the 'Tidyverse', CRAN v1.3.2
 library(sf) # Simple Features for R, CRAN v1.0-9
 library(geoAr)
@@ -9,6 +11,10 @@ library(gt)
 library(gtExtras)
 library(ggparliament)
 library(ggplot2)
+library(sf)
+library(mapsf)
+library(geoAr)
+
 
 
 # GENERO INDICADORES
@@ -361,46 +367,7 @@ bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>% # SUMA 
   gtsave("plots/indicadores_provincias.png")
 
 
-
-## MAPA ELECTORES------
-
-library(sf)
-library(mapsf)
-library(geoAr)
-
-
-arg <- get_geo(geo = "ARGENTINA", level = "provincia")
-
-electores <- datos_prov %>% 
-  filter(year == 2019) %>% 
-  select(name_prov, electores) %>% 
-  distinct() %>% 
-  left_join(geo_metadata %>% select(name_prov, codprov_censo) %>% distinct()) %>% 
-  left_join(arg) %>% 
-  st_as_sf()
-
-
-
-mf_map(x = electores)
-# Circulos proporcionales 
-mf_map(add = TRUE, 
-       col = "black",
-  x = electores, 
-  var = "electores",
-  type = "prop", 
-  leg_title = "Total electores\n(2019)",
-)
-
-mf_credits(
-  txt = "Fuente: {geoAr} + {electorAr} https://politicaargentina.github.io/polarverse/",
-  pos = "bottomleft",
-  cex = 0.6,
-  font = 3,
-  bg = NA
-)
-
 ## Electores y bancas
-
 
 
 ### BANCAS POR CICLO ELECTORAL
@@ -506,33 +473,36 @@ ganadores %>%
 
 ### GOBERNADORES HEATMAP ----
 
-gobers_years <- tibble::tribble(
-                             ~Provincia, ~`1983`, ~`1984`, ~`1985`, ~`1986`, ~`1987`, ~`1988`, ~`1989`, ~`1990`, ~`1991`, ~`1992`, ~`1993`, ~`1994`, ~`1995`, ~`1996`, ~`1997`, ~`1998`,   ~`1999`,   ~`2000`,   ~`2001`,   ~`2002`,   ~`2003`,   ~`2004`,   ~`2005`,   ~`2006`, ~`2007`, ~`2008`, ~`2009`, ~`2010`, ~`2011`, ~`2012`, ~`2013`, ~`2014`, ~`2015`, ~`2016`, ~`2017`, ~`2018`, ~`2019`, ~`2020`, ~`2021`, ~`2022`, ~`2023`,
-                         "Buenos Aires",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",   "PRO",   "PRO",   "PRO",   "PRO",    "PJ",    "PJ",    "PJ",    "PJ",
-                              "Córdoba",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                             "Santa Fe",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                      "Capital Federal",      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,   "UCR",   "UCR",   "UCR",     "UCR", "Alianza", "Alianza", "Alianza", "Frepaso", "Frepaso", "Frepaso", "Frepaso",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",
-                              "Mendoza",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ", "Alianza", "Alianza", "Alianza", "Alianza",     "UCR",     "UCR",     "UCR",     "UCR",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",
-                              "Tucumán",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "IF",    "PJ",    "PJ",    "PJ",    "FR",    "FR",    "FR",    "FR",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                           "Entre Ríos",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ", "Alianza", "Alianza", "Alianza", "Alianza",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                                "Salta",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",   "PRS",   "PRS",   "PRS",   "PRS",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                             "Misiones",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",     "FRC",     "FRC",     "FRC",     "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",
-                                "Chaco",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",  "PACH",  "PACH",  "PACH",  "PACH",   "UCR",   "UCR",   "UCR",   "UCR", "Alianza", "Alianza", "Alianza", "Alianza",     "UCR",     "UCR",     "UCR",     "UCR",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                           "Corrientes",   "PAL",   "PAL",   "PAL",   "PAL",   "PAL",   "PAL",   "PAL",   "PAL",    "IF",    "IF",   "PAL",   "PAL",   "PAL",   "PAL",    "PN",    "PN",      "IF",      "IF", "Alianza", "Alianza", "Alianza", "Alianza",     "UCR",     "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",      NA,      NA,
-                  "Santiago del Estero",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "IF",    "IF",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "IF",     "UCR",     "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",      NA,      NA,
-                             "San Juan",  "PBSJ",  "PBSJ",  "PBSJ",  "PBSJ",  "PBSJ",  "PBSJ",  "PBSJ",  "PBSJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ", "Alianza", "Alianza", "Alianza", "Alianza",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                                "Jujuy",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",
-                            "Río Negro",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR", "Alianza", "Alianza", "Alianza", "Alianza",     "UCR",     "UCR",     "UCR",     "UCR",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",  "JSRN",  "JSRN",  "JSRN",  "JSRN",  "JSRN",  "JSRN",  "JSRN",  "JSRN",  "JSRN",
-                              "Formosa",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                              "Neuquén",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",     "MPN",     "MPN",     "MPN",     "MPN",     "MPN",     "MPN",     "MPN",     "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",
-                               "Chubut",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR", "Alianza", "Alianza", "Alianza", "Alianza",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                             "San Luis",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                            "Catamarca",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "IF",    "IF",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",     "UCR",     "UCR",     "UCR",     "UCR", "Alianza",  "Alianza","Alianza", "Alianza",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                             "La Rioja",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                             "La Pampa",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                           "Santa Cruz",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",
-                     "Tierra del Fuego",      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,   "MPF",   "MPF",   "MPF",   "MPF",   "MPF",   "MPF",   "MPF",   "MPF",      "PJ",      "PJ",      "PJ",      "PJ",     "UCR",     "UCR",     "UCR",     "UCR",   "ARI",   "ARI",   "ARI",   "ARI",   "PSP",   "PSP",   "PSP",   "PSP",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ"
-                  )
+gobers_years <-tibble::tribble(
+             ~Provincia, ~`1983`, ~`1984`, ~`1985`, ~`1986`, ~`1987`, ~`1988`, ~`1989`, ~`1990`, ~`1991`, ~`1992`, ~`1993`, ~`1994`, ~`1995`, ~`1996`, ~`1997`, ~`1998`, ~`1999`, ~`2000`, ~`2001`, ~`2002`,   ~`2003`,   ~`2004`,   ~`2005`,   ~`2006`, ~`2007`, ~`2008`, ~`2009`, ~`2010`, ~`2011`, ~`2012`, ~`2013`, ~`2014`, ~`2015`, ~`2016`, ~`2017`, ~`2018`, ~`2019`, ~`2020`, ~`2021`, ~`2022`, ~`2023`, ~`2024`, ~`2025`,
+         "Buenos Aires",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",   "PRO",   "PRO",   "PRO",   "PRO",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+              "Córdoba",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+             "Santa Fe",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PS",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+      "Capital Federal",      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR", "Frepaso", "Frepaso", "Frepaso", "Frepaso",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",   "PRO",      NA,      NA,
+              "Mendoza",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",   "UCR",   "UCR",   "UCR",   "UCR",     "UCR",     "UCR",     "UCR",     "UCR",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",      NA,      NA,
+              "Tucumán",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "IF",    "PJ",    "PJ",    "PJ",    "FR",    "FR",    "FR",    "FR",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+           "Entre Ríos",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",   "UCR",   "UCR",   "UCR",   "UCR",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+                "Salta",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",   "PRS",   "PRS",   "PRS",   "PRS",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+             "Misiones",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",     "FRC",     "FRC",     "FRC",     "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",   "FRC",      NA,      NA,
+                "Chaco",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",  "PACH",  "PACH",  "PACH",  "PACH",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",     "UCR",     "UCR",     "UCR",     "UCR",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+           "Corrientes",   "PAL",   "PAL",   "PAL",   "PAL",   "PAL",   "PAL",   "PAL",   "PAL",    "IF",    "IF",   "PAL",   "PAL",   "PAL",   "PAL",    "PN",    "PN",    "IF",    "IF",   "UCR",   "UCR",     "UCR",     "UCR",     "UCR",     "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",
+  "Santiago del Estero",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "IF",    "IF",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "IF",     "UCR",     "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",   "FCS",
+             "San Juan",  "PBSJ",  "PBSJ",  "PBSJ",  "PBSJ",  "PBSJ",  "PBSJ",  "PBSJ",  "PBSJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",   "UCR",   "UCR",   "UCR",   "UCR",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+                "Jujuy",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",      NA,      NA,
+            "Río Negro",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",     "UCR",     "UCR",     "UCR",     "UCR",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",  "JSRN",  "JSRN",  "JSRN",  "JSRN",  "JSRN",  "JSRN",  "JSRN",  "JSRN",  "JSRN",      NA,      NA,
+              "Neuquén",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",     "MPN",     "MPN",     "MPN",     "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",   "MPN",      NA,      NA,
+               "Chubut",   "UCR",   "UCR",   "UCR",   "UCR",    "PJ",    "PJ",    "PJ",    "PJ",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+             "San Luis",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+            "Catamarca",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "IF",    "IF",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",   "UCR",        NA,        NA,        NA,        NA,      NA,      NA,      NA,      NA,    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+             "La Rioja",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+             "La Pampa",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+           "Santa Cruz",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      "PJ",      "PJ",      "PJ",      "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA,
+     "Tierra del Fuego",      NA,      NA,      NA,      NA,      NA,      NA,      NA,      NA,   "MPF",   "MPF",   "MPF",   "MPF",   "MPF",   "MPF",   "MPF",   "MPF",    "PJ",    "PJ",    "PJ",    "PJ",     "UCR",     "UCR",     "UCR",     "UCR",   "ARI",   "ARI",   "ARI",   "ARI",   "PSP",   "PSP",   "PSP",   "PSP",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",    "PJ",      NA,      NA
+  )
+
+  
+  
+  
 
 gobers_years %>% 
   pivot_longer(cols = c(2:42),
@@ -551,10 +521,10 @@ hrbrthemes::theme_ipsum() +
   theme(axis.text.x = element_text(angle = 90), legend.position = 'top', 
         axis.title.x = element_blank(), 
         axis.title.y = element_blank()) +
-  scale_fill_manual(values = c("PJ" = "#000000", 
-                               "UCR" = "#4d4c4c", 
+  scale_fill_manual(values = c("PJ" = "#4d4c4c", 
+                               "UCR" = "#e6d3d3", 
                                "PRO" = "#858383", 
-                               "IF" = "#e6d3d3", 
+                               "IF" = "#000000", 
                                "Otros" = '#bfbbbb'), na.value = "white") +
   scale_x_discrete(position = 'top', breaks = c('1983','1987','1991','1995','1999',
                                                 '2003','2007','2011','2015','2019','2023')) +
@@ -567,3 +537,47 @@ dev.off()
 ggsave(filename = 'plots/gobers_heatmap_blanco_negro.png')
 
  
+
+## MAPA ELECTORES------
+
+
+
+arg <- get_geo(geo = "ARGENTINA", level = "provincia")
+
+electores <- datos_prov %>% 
+  filter(year == 2019) %>% 
+  select(name_prov, electores) %>% 
+  distinct() %>% 
+  left_join(geo_metadata %>% select(name_prov, codprov_censo) %>% distinct()) %>% 
+  left_join(arg) %>% 
+  st_as_sf()
+
+
+
+mf_export(
+  x = electores,
+  filename = "plots/mapa_electores.png",
+  width = 700
+)
+
+mf_map(x = electores)
+# Circulos proporcionales 
+mf_map(add = TRUE, 
+       col = "black",
+       x = electores, 
+       var = "electores",
+       type = "prop", 
+       leg_title = "Total electores\n(2019)",
+)
+
+mf_credits(
+  txt = "Fuente: {geoAr} + {electorAr} https://politicaargentina.github.io/polarverse/",
+  pos = "bottomleft",
+  cex = 0.6,
+  font = 3,
+  bg = NA
+)
+
+dev.off()
+
+

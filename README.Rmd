@@ -20,7 +20,11 @@ Este proyecto se corresponde con la sección **Una democracia en datos** del art
 
 
 ```{r echo = FALSE}
- knitr::include_graphics("plots/indicadores_nacional_patchwork.png")
+  knitr::include_graphics("plots/indicadores_nacional_patchwork.png")
+  
+  knitr::include_graphics("plots/gobers_heatmap_blanco_negro.png")
+  
+  
 ```
 
 
@@ -34,8 +38,6 @@ Este proyecto se corresponde con la sección **Una democracia en datos** del art
 * La mayor parte del procesamiento se realizo a través del proyecto  [`electorAr`](https://politicaargentina.github.io/electorAr/): una librería de `R` que brinda herramientas que facilitan el acceso y el trabajo con datos electorales de Argentina. 
 
 * La fuente original (detrás de `electorAr`) es  el [Atla Electoral de Andy Tow](https://www.andytow.com/atlas/totalpais/)
-
-
 
 
 
@@ -53,10 +55,10 @@ Este proyecto se corresponde con la sección **Una democracia en datos** del art
 
 ## La estructura de los archivos se organiza del siguiente modo: 
 
-1. En [codigo]("https://github.com/TuQmano/arg_demorcracia40/tree/main/codigo") se encuentran los _scripts_ para:
+1. En [codigo](https://github.com/TuQmano/arg_demorcracia40/tree/main/codigo) se encuentran los _scripts_ para:
 
  - Descarga de datos
  - Generación de indicadores
  - Tabulados y Gráficos
  
-2. En [plots]("https://github.com/TuQmano/arg_demorcracia40/tree/main/plots") se guardan las salidas (gráficos y tablas) que ilustran los indicadores
+2. En [plots](https://github.com/TuQmano/arg_demorcracia40/tree/main/plots) se guardan las salidas (gráficos y tablas) que ilustran los indicadores
