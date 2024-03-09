@@ -44,6 +44,10 @@ participacion_prov <- participacion_prov %>%
          year = as.integer(year))
 
 
+
+
+
+
 ### PLOTS
 
 #### NEP ----
@@ -245,7 +249,6 @@ bind_rows(competitividad, concentracion, nep, participacion) %>%
   ) %>% 
   gtsave("plots/indicadores_nacional.png")
 
-
 ##### PROVINCIAL -----
 concentracion_p <- concentracion_prov %>% 
   transmute(year, codprov, value = concentration, i = "concentracion")
@@ -275,7 +278,7 @@ vars_indicadores= c('competitividad',
 
 #### NOMRBES DE PORVINCIAS PARA VIZ
 prov_names <- geo_metadata %>% 
-  select(codprov, name_prov) %>% 
+  select(codprov, name_iso, name_prov) %>% 
   distinct()
 
 
@@ -286,7 +289,7 @@ bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>% # SUMA 
   pivot_wider(id_cols = c(year, codprov), names_from = i, values_from = value) %>% #GENERA VARIABLES ESPECIFICAS PARA CADA INDICADOR
   filter(year >= 1983)  %>% # FILTRA ELECCIONES DESDE EL RETORNO DE LA DEMOCRACIA
   left_join(prov_names, by = "codprov") %>%  # AGRUPA POR DISTRITO 
-  group_by(name_prov) %>% 
+  group_by(name_iso) %>% 
   summarise( # CALCULA MEDIA y DESVIACION DE CADA INDICADOR
     
     mean_competitividad = mean(competitividad), 
@@ -301,7 +304,7 @@ bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>% # SUMA 
     
     # Lista de cada variable de indicadores para sparkline de cada indicador por provincia
     across(all_of(vars_indicadores), ~ list(.x))) %>% 
-  select(name_prov, contains("participacion"), contains("concentracion"), 
+  select(name_iso, contains("participacion"), contains("concentracion"), 
          contains("competitividad"), contains("nep")) %>% 
   gt() %>% 
   
@@ -328,7 +331,7 @@ bind_rows(competitividad_p, concentracion_p, nep_p, participacion_p) %>% # SUMA 
   cols_align(
     align = "center",
     columns = c(competitividad, concentracion, nep, participacion)) %>% 
-  cols_label(name_prov = md(""),
+  cols_label(name_iso = md(""),
              competitividad = md(""),
              concentracion = md(""),                  
              nep = md("") ,             
@@ -382,7 +385,7 @@ bancas <- read_csv(url) %>%  # CALCULA BANCAS TOTALES POR PROVINCIA
 
  electores %>% 
   left_join(bancas) %>%
-  group_by(name_prov) %>% 
+  group_by(name_iso) %>% 
   st_drop_geometry() %>% 
   rename(seats_diputados = seats) %>% 
   ungroup() %>% 
@@ -391,14 +394,14 @@ bancas <- read_csv(url) %>%  # CALCULA BANCAS TOTALES POR PROVINCIA
    arrange(desc(pct_electores)) %>%
   select(- contains("codprov")) %>% 
   mutate(electores_acumulados = cumsum(electores/sum(electores))) %>% 
-  select(name_prov, seats_diputados, pct_dip, electores, pct_electores, electores_acumulados) %>% 
+  select(name_iso, seats_diputados, pct_dip, electores, pct_electores, electores_acumulados) %>% 
   mutate(representacion = round(100 * (pct_dip - pct_electores), 2)) %>% 
   gt()  %>% 
    
    cols_align(
      align = "center",
      columns = c(electores, seats_diputados, pct_electores, pct_dip, electores_acumulados, representacion)) %>% 
-   cols_label(name_prov = md(""),
+   cols_label(name_iso = md(""),
               seats_diputados = md("Bancas"),
               electores = "N",
               pct_electores = md("%"),                  
@@ -438,17 +441,18 @@ bancas <- read_csv(url) %>%  # CALCULA BANCAS TOTALES POR PROVINCIA
  ganadores <- read_csv("entradas/ganador-data.csv") %>%
    select(-1) %>% 
    mutate(match = ifelse(is.na(match), 0, match)) %>% 
-   select(name_prov, year ,match)
+   left_join(prov_names) %>% 
+   select(name_iso, year ,match) 
 
 ganadores %>% 
-  group_by(name_prov) %>% 
+  group_by(name_iso) %>% 
   summarise(wins = list(match), .groups = "drop") %>% 
   gt() %>%
   gt_plt_winloss(wins,
                  max_wins = 9,
                  palette = c("#000000", "#AAAAAA", "gray"),
                  type = "pill")  %>% 
-  cols_label(name_prov = md(""),
+  cols_label(name_iso = md(""),
              wins = md("Nacional = Provincial")) %>% 
   gt_theme_538()  %>% 
   tab_header(
@@ -546,9 +550,9 @@ arg <- get_geo(geo = "ARGENTINA", level = "provincia")
 
 electores <- datos_prov %>% 
   filter(year == 2019) %>% 
-  select(name_prov, electores) %>% 
+  select(name_iso, electores) %>% 
   distinct() %>% 
-  left_join(geo_metadata %>% select(name_prov, codprov_censo) %>% distinct()) %>% 
+  left_join(geo_metadata %>% select(name_iso, codprov_censo) %>% distinct()) %>% 
   left_join(arg) %>% 
   st_as_sf()
 

@@ -36,7 +36,10 @@ competitividad <- datos %>%
 
 datos_prov <- read_csv("entradas/datos_prov.csv") %>% 
   filter(!is.na(votos), 
-         year >= 1983)
+         year >= 1983) %>% 
+  left_join(geoAr::geo_metadata %>% 
+              select(codprov, name_iso) %>%
+              distinct())
 
 
 ## PARTICIPACION ----
